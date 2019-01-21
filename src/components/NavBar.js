@@ -5,7 +5,6 @@ import * as sessionActions from '../actions/sessionActions';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
-import * as firebaseAuth from '../firebase/auth'
 
 
 class NavBar extends Component {
@@ -16,7 +15,6 @@ class NavBar extends Component {
       activeItem: this.props.location,
     }
   }
-
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 

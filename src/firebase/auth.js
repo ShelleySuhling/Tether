@@ -11,7 +11,6 @@ export let signIn = (email, password) => {
 }
 
 export let signOut = () => {
-    console.log("Firebase/auth.js  signOUt")
     return firebase.auth().signOut()
         .then(res => {
             return res
@@ -21,12 +20,12 @@ export let signOut = () => {
         })
 }
 
-export let getCurrentUser = () => {
-    var user = firebase.auth().currentUser;
-    if (user) {
-        console.log(user)
-    } else {
-        console.log('no one signed in')
-    }
-    return user
-}
+// export let getCurrentUser = () => {
+//     var user = firebase.auth().currentUser;
+//     if (user) {
+//         console.log(user)
+//     } else {
+//         console.log('no one signed in')
+//     }
+//     return user
+// }

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Router, NavLink, HashRouter, BrowserRouter, withRouter, Switch } from "react-router-dom";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

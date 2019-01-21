@@ -4,8 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as sessionActions from '../actions/sessionActions';
 import PropTypes from 'prop-types';
 
-class LogOut extends Component {
-
+class SignOut extends Component {
 
     constructor(props) {
         super(props)
@@ -14,10 +13,8 @@ class LogOut extends Component {
         }
     }
 
-
     componentWillMount() {
         this.props.sessionActions.requestSignOut(this.state)
-        console.log('***', this.state)
     }
 
     render() {
@@ -29,7 +26,7 @@ class LogOut extends Component {
     }
 }
 
-LogOut.propTypes = {
+SignOut.propTypes = {
     sessionActions: PropTypes.object,
     session: PropTypes.object
 };
@@ -46,4 +43,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(LogOut);
+)(SignOut);

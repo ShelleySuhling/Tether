@@ -1,8 +1,6 @@
-import initialState from './initialState';
-import { SIGNIN, SIGNOUT_REQUEST, SIGNOUT_SUCCESS, SIGNOUT_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS } from '../actions/actionTypes';
+import { SIGNOUT_REQUEST, SIGNOUT_SUCCESS, SIGNOUT_FAILURE, SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE } from '../actions/actionTypes';
 
 export default function session(state = {}, action) {
-    console.log('*****', action, state)
     switch (action.type) {
         case SIGNIN_REQUEST:
             console.log('SIGNIN REQUEST')
@@ -17,7 +15,7 @@ export default function session(state = {}, action) {
                 user: action.user,
                 pending_signin: false
             };
-        case SIGNOUT_FAILURE:
+        case SIGNIN_FAILURE:
             console.log('SIGNIN FAILURE')
             return {
                 ...state,
@@ -25,20 +23,20 @@ export default function session(state = {}, action) {
                 pending_signin: false,
             };
         case SIGNOUT_REQUEST:
-            console.log('SIGNOUT request')
+            console.log('SIGNOUT REQUEST')
             return {
                 ...state,
                 pending_signout: true,
             };
         case SIGNOUT_SUCCESS:
-            console.log('SIGNOUT request')
+            console.log('SIGNOUT SUCCESS')
             return {
                 ...state,
                 user: {},
                 pending_signout: false,
             };
         case SIGNOUT_FAILURE:
-            console.log('SIGNOUT request')
+            console.log('SIGNOUT FAILURE')
             return {
                 ...state,
                 error: action.session.error,
