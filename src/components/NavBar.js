@@ -13,7 +13,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeItem: 'this.props.location',
+      activeItem: this.props.location,
     }
   }
 
@@ -30,8 +30,8 @@ class NavBar extends Component {
         <Menu.Menu position='right'>
           <Menu.Item as={NavLink} exact to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item as={NavLink} exact to='/messages' name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
-          <Menu.Item as={NavLink} exact to='/logout' name='logout' active={activeItem === 'logout'} onClick={this.handleItemClick} />
-          <Menu.Item as={NavLink} exact to='/login' name='login' active={activeItem === 'login'} onClick={this.handleItemClick} />
+          <Menu.Item as={NavLink} exact to='/signout' name='Sign Out' active={activeItem === 'signout'} onClick={this.handleItemClick} />
+          <Menu.Item as={NavLink} exact to='/signin' name='Sign In' active={activeItem === 'signin'} onClick={this.handleItemClick} />
         </Menu.Menu>
       </Menu>
     )

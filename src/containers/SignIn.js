@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import * as _ from 'lodash'
 
 
-class LogIn extends Component {
+class SignIn extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -64,7 +64,7 @@ class LogIn extends Component {
     }
 }
 
-LogIn.propTypes = {
+SignIn.propTypes = {
     sessionActions: PropTypes.object,
     session: PropTypes.object
 };
@@ -81,4 +81,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(LogIn);
+)(SignIn);

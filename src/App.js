@@ -4,8 +4,8 @@ import './assets/css/App.css';
 import NavBar from './components/NavBar'
 import Home from './containers/Home'
 import Messages from './containers/Messages'
-import LogIn from './containers/LogIn'
-import LogOut from './containers/LogOut'
+import SignIn from './containers/SignIn'
+import SignOut from './containers/SignOut'
 
 class App extends Component {
   render() {
@@ -16,8 +16,8 @@ class App extends Component {
             <NavBar />
             <Route exact path='/' component={Home} />
             <Route path='/messages' component={Messages} />
-            <Route path='/login' component={LogIn} />
-            <Route path='/logout' component={LogOut} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signout' component={SignOut} />
 
           </div>
         </BrowserRouter>
