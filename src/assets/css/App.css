@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  padding: 10px;
+}
+
+.content-container{
+  display:flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.login-container{
+  width: 40%;
+}
+
+.login-form-label {
+  font-size: 20px;
+  text-align:left;
+  padding: 5px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
