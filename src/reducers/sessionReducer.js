@@ -13,7 +13,8 @@ export default function session(state = {}, action) {
             return {
                 ...state,
                 user: action.user,
-                pending_signin: false
+                pending_signin: false,
+                isAuthenticated: true
             };
         case SIGNIN_FAILURE:
             console.log('SIGNIN FAILURE')
@@ -21,6 +22,7 @@ export default function session(state = {}, action) {
                 ...state,
                 error: action.error,
                 pending_signin: false,
+                isAuthenticated: false,
             };
         case SIGNOUT_REQUEST:
             console.log('SIGNOUT REQUEST')
@@ -34,6 +36,7 @@ export default function session(state = {}, action) {
                 ...state,
                 user: {},
                 pending_signout: false,
+                isAuthenticated: false,
             };
         case SIGNOUT_FAILURE:
             console.log('SIGNOUT FAILURE')
@@ -41,6 +44,7 @@ export default function session(state = {}, action) {
                 ...state,
                 error: action.session.error,
                 pending_signout: false,
+                isAuthenticated: state.isAuthenticated
             };
         default:
             return state;
