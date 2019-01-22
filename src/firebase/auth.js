@@ -20,6 +20,16 @@ export let signOut = () => {
         })
 }
 
+export let signUp = (email, password) => {
+    return firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((res) => {
+            return res
+        })
+        .catch((error) => {
+            return error
+        })
+}
+
 // export let getCurrentUser = () => {
 //     var user = firebase.auth().currentUser;
 //     if (user) {

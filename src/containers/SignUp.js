@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
-import { Button, Form, Segment } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as sessionActions from '../actions/sessionActions';
@@ -10,7 +10,7 @@ import * as _ from 'lodash'
 import EmailPasswordForm from '../components/EmailPasswordForm'
 
 
-class SignIn extends Component {
+class SignUp extends Component {
     constructor(props) {
         super(props)
     }
@@ -23,31 +23,33 @@ class SignIn extends Component {
         this.setState({ [event.target.type]: event.target.value });
     }
 
-    onSubmit = () => {
-        this.props.sessionActions.requestSignIn(this.state.email, this.state.password)
+    onSubmit = (event) => {
+        this.props.sessionActions.requestSignUp(this.state.email, this.state.password)
     }
+
 
     render() {
         const { session } = this.props
         if (!_.isEmpty(session.user)) {
             return <Redirect to='/' />
-        } else if (session.pending_signin) {
+        } else if (session.pending_signup) {
             return "loading"
         }
         else {
             return (
                 <div className="content-container">
-                    <EmailPasswordForm onSubmit={this.onSubmit} handleChange={this.handleChange} confirmPassword={false} error={session.error} />
+                    <EmailPasswordForm onSubmit={this.onSubmit} handleChange={this.handleChange} confirmPassword={true} error={session.error} />
                 </div>
             )
         }
     }
 }
 
-SignIn.propTypes = {
+SignUp.propTypes = {
     sessionActions: PropTypes.object,
     session: PropTypes.object
 };
+
 function mapStateToProps(state) {
     return {
         session: state.session,
@@ -61,4 +63,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(SignIn);
+)(SignUp);

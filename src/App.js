@@ -11,6 +11,7 @@ import Home from './containers/Home'
 import Messages from './containers/Messages'
 import SignIn from './containers/SignIn'
 import SignOut from './containers/SignOut'
+import SignUp from './containers/SignUp'
 import EditProfile from './containers/EditProfile'
 
 
@@ -30,7 +31,6 @@ class App extends Component {
 
   render() {
     const { session } = this.props
-
     return (
       <div className="App">
         <BrowserRouter>
@@ -38,9 +38,9 @@ class App extends Component {
             <NavBar isAuthenticated={session.isAuthenticated} />
             <Route exact path='/' component={Home} />
             <Route path='/signin' component={SignIn} />
-            <Route path='/signout' component={SignOut} />
-            <Route path='/edit_profile' component={EditProfile} />
-            {/* {this.ProtectedRoute({ component: EditProfile })} */}
+            <Route path='/signup' component={SignUp} />
+            {this.ProtectedRoute({ path: '/signout', component: SignOut })}
+            {this.ProtectedRoute({ path: '/edit_profile', component: EditProfile })}
           </div>
         </BrowserRouter>
       </div>)

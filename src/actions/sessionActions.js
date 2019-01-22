@@ -6,12 +6,13 @@ export let requestSignIn = (email, password) => {
         dispatch({ type: types.SIGNIN_REQUEST })
         firebaseAuth.signIn(email, password)
             .then((res) => {
+                if (res.code) {
+                    throw res
+                }
                 dispatch({ type: types.SIGNIN_SUCCESS, user: res.user })
-                return true
             })
             .catch((error) => {
-                dispatch({ type: types.SIGNIN_FAILURE, error: error })
-                return false
+                dispatch({ type: types.SIGNIN_FAILURE, error: error.message })
             })
     }
 }
@@ -24,7 +25,29 @@ export let requestSignOut = () => {
                 dispatch({ type: types.SIGNOUT_SUCCESS })
             })
             .catch((error) => {
-                dispatch({ type: types.SIGNOUT_FAILURE, error: error })
+                dispatch({ type: types.SIGNOUT_FAILURE, error: error.message })
             })
+    }
+}
+
+export let requestSignUp = (email, password) => {
+    return dispatch => {
+        dispatch({ type: types.SIGNUP_REQUEST })
+        firebaseAuth.signUp(email, password)
+            .then((res) => {
+                if (res.code) {
+                    throw res
+                }
+                dispatch({ type: types.SIGNUP_SUCCESS, user: res.user })
+            })
+            .catch((error) => {
+                dispatch({ type: types.SIGNUP_FAILURE, error: error.message })
+            })
+    }
+}
+
+export let clearAuthErrors = () => {
+    return dispatch => {
+        dispatch({ type: types.CLEAR_ERROR })
     }
 }
