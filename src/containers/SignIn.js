@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
-import { Button, Form, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as sessionActions from '../actions/sessionActions';
 import PropTypes from 'prop-types';
 import * as _ from 'lodash'
-
 import EmailPasswordForm from '../components/EmailPasswordForm'
 
 
 class SignIn extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     componentWillUnmount() {
         this.props.sessionActions.clearAuthErrors()
     }

@@ -8,7 +8,6 @@ import { bindActionCreators } from 'redux';
 
 import NavBar from './components/NavBar'
 import Home from './containers/Home'
-import Messages from './containers/Messages'
 import SignIn from './containers/SignIn'
 import SignOut from './containers/SignOut'
 import SignUp from './containers/SignUp'
@@ -16,8 +15,9 @@ import EditProfile from './containers/EditProfile'
 
 
 class App extends Component {
-  constructor(props) {
-    super(props)
+
+  checkSignedIn = () => {
+    sessionActions.checkSignedIn()
   }
 
   ProtectedRoute = ({ component: Component, ...rest }) => {
@@ -31,6 +31,7 @@ class App extends Component {
 
   render() {
     const { session } = this.props
+    this.checkSignedIn()
     return (
       <div className="App">
         <BrowserRouter>

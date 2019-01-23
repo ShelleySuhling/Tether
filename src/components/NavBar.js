@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as sessionActions from '../actions/sessionActions';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom'
-import { Menu, Dropdown, Icon } from 'semantic-ui-react'
+import { Menu, Dropdown } from 'semantic-ui-react'
 import * as _ from 'lodash'
 
 
@@ -34,7 +34,7 @@ class NavBar extends Component {
 
   render() {
     const { activeItem } = this.state
-    const { session, isAuthenticated } = this.props
+    const { session } = this.props
     console.log(this.props)
     return (
       <Menu pointing>

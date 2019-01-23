@@ -6,17 +6,17 @@ import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css'
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux'
-import { applyMiddleware } from 'redux'
-import thunk from 'thunk'
-import rootReducer from './reducers/rootReducer'
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
-const store = configureStore(rootReducer, applyMiddleware(thunk));
 
-window.store = store;
+
+const { persistor, store } = configureStore()
 
 ReactDOM.render(
     (<Provider store={store}>
-        <App />
+        <PersistGate loading={null} persistor={persistor}>
+            <App />
+        </PersistGate>
     </Provider>), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

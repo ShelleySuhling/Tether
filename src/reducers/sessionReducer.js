@@ -62,7 +62,7 @@ export default function session(state = {}, action) {
                 ...state,
                 user: action.user,
                 pending_signup: false,
-                isAuthenticated: false,
+                isAuthenticated: true,
             };
         case types.SIGNUP_FAILURE:
             console.log('SIGNUP FAILURE')

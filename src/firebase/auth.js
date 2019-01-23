@@ -1,13 +1,15 @@
 import firebase from '../firebase.js';
 
 export let signIn = (email, password) => {
-    return firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((res) => {
-            return res
-        })
-        .catch((error) => {
-            return error
-        });
+    return firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {
+        return firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((res) => {
+                return res
+            })
+            .catch((error) => {
+                return error
+            });
+    })
 }
 
 export let signOut = () => {
@@ -30,12 +32,6 @@ export let signUp = (email, password) => {
         })
 }
 
-// export let getCurrentUser = () => {
-//     var user = firebase.auth().currentUser;
-//     if (user) {
-//         console.log(user)
-//     } else {
-//         console.log('no one signed in')
-//     }
-//     return user
-// }
+export let getCurrentUser = () => {
+    console.log(firebase.auth().currentUser)
+}

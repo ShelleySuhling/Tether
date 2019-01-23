@@ -3,10 +3,6 @@ import { Button, Form, Segment } from 'semantic-ui-react'
 
 class EmailPasswordForm extends Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         let { confirmPassword, onSubmit, handleChange, error } = this.props
         return (

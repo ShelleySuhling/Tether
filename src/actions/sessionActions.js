@@ -51,3 +51,7 @@ export let clearAuthErrors = () => {
         dispatch({ type: types.CLEAR_ERROR })
     }
 }
+
+export let checkSignedIn = () => {
+    console.log('***', firebaseAuth.getCurrentUser())
+}
