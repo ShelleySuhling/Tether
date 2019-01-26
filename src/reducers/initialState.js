@@ -6,4 +6,8 @@ export default {
         isAuthenticated: false,
         error: "",
     },
+    events: {
+        eventList: [],
+        error: "",
+    },
 };

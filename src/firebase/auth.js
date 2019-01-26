@@ -31,7 +31,3 @@ export let signUp = (email, password) => {
             return error
         })
 }
-
-export let getCurrentUser = () => {
-    console.log(firebase.auth().currentUser)
-}

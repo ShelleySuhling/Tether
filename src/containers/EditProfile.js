@@ -22,7 +22,9 @@ class EditProfile extends Component {
 
     render() {
         const { session } = this.props
-        return <ProfileForm handleChange={this.handleChange} onSubmit={this.onSubmit} user={session.user}></ProfileForm>
+        return (<div className="content-container">
+            <ProfileForm handleChange={this.handleChange} onSubmit={this.onSubmit} user={session.user}></ProfileForm>
+        </div>)
     }
 }
 

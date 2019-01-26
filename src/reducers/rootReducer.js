@@ -1,7 +1,9 @@
 import session from './sessionReducer';
+import events from './eventsReducer';
 
 const rootReducer = ({
-    session
+    session,
+    events
 });
 
 export default rootReducer;

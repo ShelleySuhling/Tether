@@ -4,11 +4,11 @@ import { Button, Form, Segment } from 'semantic-ui-react'
 class EmailPasswordForm extends Component {
 
     render() {
-        let { confirmPassword, onSubmit, handleChange, error } = this.props
+        let { confirmPassword, onSubmit, handleChange, error, isLoading } = this.props
         return (
             <div className="login-container">
                 {error ? <Segment inverted color='red' tertiary>{error}</Segment> : null}
-                <Form>
+                <Form className={isLoading ? "loading" : null}>
                     <Form.Field>
                         <div className="login-form-label">Email</div>
                         <input placeholder='Email' type='email' onChange={handleChange} />

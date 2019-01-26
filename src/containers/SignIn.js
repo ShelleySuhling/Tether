@@ -25,13 +25,14 @@ class SignIn extends Component {
         const { session } = this.props
         if (!_.isEmpty(session.user)) {
             return <Redirect to='/' />
-        } else if (session.pending_signin) {
-            return "loading"
         }
+        // else if (session.pending_signin) {
+        //     return "loading"
+        // }
         else {
             return (
                 <div className="content-container">
-                    <EmailPasswordForm onSubmit={this.onSubmit} handleChange={this.handleChange} confirmPassword={false} error={session.error} />
+                    <EmailPasswordForm onSubmit={this.onSubmit} handleChange={this.handleChange} confirmPassword={false} error={session.error} isLoading={session.pending_signin} />
                 </div>
             )
         }
