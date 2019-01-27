@@ -1,0 +1,57 @@
+import React, { Component, SyntheticEvent } from 'react';
+import { Button, Form, Segment } from 'semantic-ui-react'
+import { DatePicker, TimePicker } from 'antd';
+import { Checkbox } from 'semantic-ui-react'
+
+import moment from 'moment';
+
+class EventForm extends Component {
+
+    render() {
+        let { onSubmit, handleChange, error, event, isLoading, toggleMandatory } = this.props
+        return (
+            <div className="login-container">
+                {error ? <Segment inverted color='red' tertiary>{error}</Segment> : null}
+                <Form className={isLoading ? "loading" : null}>
+                    <Form.Field>
+                        <div className="login-form-label">Event Title</div>
+                        <input placeholder='Title' name="title" value={event.title} type='email' onChange={(e) => { handleChange('title', e.target.value) }} />
+                    </Form.Field>
+                    <Form.Field>
+                        <div className="login-form-label">Location</div>
+                        <input placeholder='Location' name="location" value={event.location} onChange={(e) => { handleChange('location', e.target.value) }} />
+                    </Form.Field>
+                    <Form.Field>
+                        <div className="login-form-label">Start Date</div>
+                        <DatePicker
+                            selected={event.startDate}
+                            onChange={(date) => { handleChange("startDate", date) }}
+                        />
+                        <TimePicker onChange={(time) => { handleChange("startTime", time) }}
+                            defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
+                            use12Hours format="h:mm a" />
+                    </Form.Field>
+                    <Form.Field>
+                        <div className="login-form-label">End Date</div>
+                        <DatePicker
+                            selected={event.EndDate}
+                            onChange={(date) => { handleChange("endDate", date) }}
+                        />
+                        <TimePicker onChange={(time) => { handleChange("endTime", time) }}
+                            defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
+                            use12Hours format="h:mm a" />
+                    </Form.Field>
+                    <Form.Field>
+                        <div className="login-form-label">is this Mandatory?</div>
+                        <Checkbox toggle onChange={() => { toggleMandatory() }} name="mandatory" />
+                    </Form.Field>
+
+                    <Button type='submit' onClick={onSubmit}>Update</Button>
+                </Form>
+
+            </div>
+        )
+    }
+}
+
+export default EventForm
