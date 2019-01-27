@@ -37,16 +37,18 @@ class NavBar extends Component {
     const { session } = this.props
     console.log(session)
     return (
-      <Menu pointing>
-        <Menu.Menu position='right'>
-          {session.user ? session.user.email : null}
-          <Menu.Item as={NavLink} exact to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-          {!_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/events' name='Events' active={activeItem === 'events'} onClick={this.handleItemClick} /> : null}
-          {!_.isEmpty(session.user) ? this.renderDropDown() : null}
-          {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signin' name='Sign In' active={activeItem === 'signin'} onClick={this.handleItemClick} /> : null}
-          {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signup' name='Sign Up' active={activeItem === 'signup'} onClick={this.handleItemClick} /> : null}
-        </Menu.Menu>
-      </Menu>
+      <div className="nav-container">
+        <Menu pointing>
+          <Menu.Menu position='right'>
+            {session.user ? session.user.email : null}
+            <Menu.Item as={NavLink} exact to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+            {!_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/events' name='Events' active={activeItem === 'events'} onClick={this.handleItemClick} /> : null}
+            {!_.isEmpty(session.user) ? this.renderDropDown() : null}
+            {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signin' name='Sign In' active={activeItem === 'signin'} onClick={this.handleItemClick} /> : null}
+            {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signup' name='Sign Up' active={activeItem === 'signup'} onClick={this.handleItemClick} /> : null}
+          </Menu.Menu>
+        </Menu>
+      </div>
     )
   }
 }

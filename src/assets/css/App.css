@@ -3,12 +3,65 @@
   padding: 10px;
 }
 
+.nav-container{
+  padding: 0 0 50px 0;
+}
+
 .content-container{
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-around;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.events-container{
+  display:flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 50px;
+  padding: 0 10%;
+  text-align: left;
+}
+
+.card-container{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.card-info-container{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.card-title{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+  font-size: 30px;
+  padding: 0 0 10px 0;
+}
+
+.card-description{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.card-icons{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.plus-icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin: -30px;
 }
 
 .login-container{

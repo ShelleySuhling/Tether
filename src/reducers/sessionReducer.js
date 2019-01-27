@@ -72,6 +72,14 @@ export default function session(state = {}, action) {
                 pending_signup: false,
                 isAuthenticated: state.isAuthenticated
             };
+        case types.UPDATE_SESSION_USER:
+            console.log('SIGNUP FAILURE')
+            return {
+                ...state,
+                error: action.error,
+                pending_signup: false,
+                isAuthenticated: state.isAuthenticated
+            };
         case types.CLEAR_SESSION_ERROR:
             console.log('CLEAR_SESSION_ERROR')
             return {
