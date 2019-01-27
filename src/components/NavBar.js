@@ -35,6 +35,7 @@ class NavBar extends Component {
   render() {
     const { activeItem } = this.state
     const { session } = this.props
+    console.log(session)
     return (
       <Menu pointing>
         <Menu.Menu position='right'>

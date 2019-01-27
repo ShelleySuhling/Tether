@@ -50,9 +50,9 @@ export let requestSignUp = (email, password) => {
     }
 }
 
-export let updateCurrentUser = (user) => {
+export let updateSessionUser = (user) => {
     return dispatch => {
-        dispatch({ type: types.SIGNIN_SUCCESS, user: user })
+        dispatch({ type: types.UPDATE_SESSION_USER, user: user })
     }
 }
 
