@@ -72,8 +72,8 @@ export default function session(state = {}, action) {
                 pending_signup: false,
                 isAuthenticated: state.isAuthenticated
             };
-        case types.CLEAR_ERROR:
-            console.log('CLEAR_ERROR')
+        case types.CLEAR_SESSION_ERROR:
+            console.log('CLEAR_SESSION_ERROR')
             return {
                 ...state,
                 error: "",

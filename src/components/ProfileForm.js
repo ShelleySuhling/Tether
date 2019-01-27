@@ -19,7 +19,7 @@ class ProfileForm extends Component {
                     </Form.Field>
                     <Form.Field>
                         <div className="login-form-label">Phone Number</div>
-                        <input placeholder='Phone Number' name="phoneNumber" value={user.phoneNumber} onChange={handleChange} />
+                        <input maxlength="12" placeholder='Phone Number' name="phoneNumber" value={user.phoneNumber} onChange={handleChange} />
                     </Form.Field>
                     <Button type='submit' onClick={onSubmit}>Update</Button>
                 </Form>

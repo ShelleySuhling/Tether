@@ -7,8 +7,8 @@ export let getUser = (uid) => {
         })
 }
 
-export let updateUser = (new_user_data, uid) => {
-    let docRef = firebase.firestore().collection("users").doc(uid)
+export let updateUser = (new_user_data) => {
+    let docRef = firebase.firestore().collection("users").doc(new_user_data.uid)
     return docRef.get().then((thisDoc) => {
         if (thisDoc.exists) {
             return docRef.update(new_user_data)

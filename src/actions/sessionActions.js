@@ -1,5 +1,7 @@
 import * as types from './actionTypes';
 import * as firebaseAuth from '../firebase/auth'
+import * as firebaseUsers from '../firebase/users'
+
 
 export let requestSignIn = (email, password) => {
     return dispatch => {
@@ -9,7 +11,9 @@ export let requestSignIn = (email, password) => {
                 if (res.code) {
                     throw res
                 }
-                dispatch({ type: types.SIGNIN_SUCCESS, user: res.user })
+                return firebaseUsers.getUser(res.user.uid)
+            }).then((user_res) => {
+                dispatch({ type: types.SIGNIN_SUCCESS, user: user_res })
             })
             .catch((error) => {
                 dispatch({ type: types.SIGNIN_FAILURE, error: error.message })
@@ -46,8 +50,14 @@ export let requestSignUp = (email, password) => {
     }
 }
 
+export let updateCurrentUser = (user) => {
+    return dispatch => {
+        dispatch({ type: types.SIGNIN_SUCCESS, user: user })
+    }
+}
+
 export let clearAuthErrors = () => {
     return dispatch => {
-        dispatch({ type: types.CLEAR_ERROR })
+        dispatch({ type: types.CLEAR_SESSION_ERROR })
     }
 }

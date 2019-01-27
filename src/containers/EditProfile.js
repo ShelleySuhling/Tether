@@ -4,8 +4,10 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import * as usersActions from '../actions/usersActions';
+import * as sessionActions from '../actions/sessionActions';
 import ProfileForm from '../components/ProfileForm'
 
+export const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 class EditProfile extends Component {
     constructor(props) {
@@ -20,8 +22,10 @@ class EditProfile extends Component {
     }
 
     componentWillUnmount() {
-        // this.props.sessionActions.clearAuthErrors()
+        this.props.sessionActions.clearAuthErrors()
     }
+
+
 
     handleChange = (event) => {
         this.setState({
@@ -34,7 +38,7 @@ class EditProfile extends Component {
     }
 
     onSubmit = () => {
-        this.props.usersActions.requestUpdateUser(this.state.active_user, this.state.active_user.uid)
+        this.props.usersActions.requestUpdateUser(this.state.active_user)
     }
 
     render() {
@@ -58,7 +62,8 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        usersActions: bindActionCreators(usersActions, dispatch)
+        usersActions: bindActionCreators(usersActions, dispatch),
+        sessionActions: bindActionCreators(sessionActions, dispatch)
     };
 }
 export default connect(

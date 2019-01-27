@@ -41,6 +41,12 @@ export default function users(state = {}, action) {
                 error: action.error,
                 pending_user: false,
             };
+        case types.CLEAR_USER_ERROR:
+            console.log('CLEAR_USER_ERROR')
+            return {
+                ...state,
+                error: "",
+            };
         default:
             return state;
     }
