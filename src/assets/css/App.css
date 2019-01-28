@@ -10,8 +10,9 @@
 .content-container{
   display:flex;
   flex-direction: column;
-  align-items: space-around;
-  justify-content: space-between;
+  align-items: space-between;
+  justify-content: space-around;
+  width: 100%;
   padding: 0 5%;
 }
 
@@ -58,10 +59,7 @@
 }
 
 .plus-icon{
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  margin: -30px;
+
 }
 
 .login-container{
@@ -72,6 +70,13 @@
   font-size: 20px;
   text-align:left;
   padding: 5px;
+}
+
+.form-container{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+  width: 80%;
 }
 
 @keyframes App-logo-spin {

@@ -16,8 +16,7 @@ class ProfileForm extends Component {
 
     generateDescription = () => {
         let { event } = this.props
-        console.log(event)
-        console.log(this.toDate(event.startTime))
+
         return (
             <div className="card-container">
                 <div className="card-info-container">

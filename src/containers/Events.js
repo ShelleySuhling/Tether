@@ -17,17 +17,12 @@ class Events extends Component {
 
     renderEvents() {
         let { events } = this.props
-        return _.map(events.eventsList, (e => { return <EventBlock key={e.id} event={e} /> }))
+        return _.map(events.eventsList, (e => { return <EventBlock key={e.title} event={e} /> }))
     }
 
     render() {
         return (
             <div className="content-container">
-                <div className="plus-icon">
-                    <Link to="/new_event">
-                        <Icon size='huge' color="orange" name='plus circle' />
-                    </Link>
-                </div>
                 <div className="events-container">
                     <Card.Group>
                         {this.renderEvents()}

@@ -5,8 +5,6 @@ import * as eventsActions from '../actions/eventsActions';
 import PropTypes from 'prop-types';
 import EventForm from '../components/EventForm'
 
-import * as _ from 'lodash'
-
 class NewEvent extends Component {
 
     constructor(props) {
@@ -34,13 +32,13 @@ class NewEvent extends Component {
     }
 
     onSubmit = () => {
-        console.log('SUBMIT HIT')
         this.props.eventsActions.requestCreateEvent(this.state)
     }
 
     render() {
-        console.log(this.state)
-        return <EventForm event={this.state} handleChange={this.handleChange} toggleMandatory={this.toggleMandatory} onSubmit={this.onSubmit} />
+        return (<div className="content-container">
+            <EventForm event={this.state} handleChange={this.handleChange} toggleMandatory={this.toggleMandatory} onSubmit={this.onSubmit} submitText="Create Event" />
+        </div >)
     }
 }
 

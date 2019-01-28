@@ -1,5 +1,4 @@
 import firebase from '../firebase.js';
-import moment from 'moment';
 
 export let getEvents = () => {
     return firebase.firestore().collection("events").get()

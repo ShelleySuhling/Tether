@@ -29,13 +29,12 @@ class App extends Component {
   AdminRoute = ({ component: Component, ...rest }) => {
     const { session } = this.props
     return (<Route {...rest} render={(props) => (
-      session.user.role == "master" ?
+      (session.user.role === "master") ?
         <Component {...props} /> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />
     )} />)
   }
 
   render() {
-    console.log(this.props)
     const { session } = this.props
     return (
       <div className="App">

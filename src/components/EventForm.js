@@ -1,4 +1,4 @@
-import React, { Component, SyntheticEvent } from 'react';
+import React, { Component } from 'react';
 import { Button, Form, Segment } from 'semantic-ui-react'
 import { DatePicker, TimePicker } from 'antd';
 import { Checkbox } from 'semantic-ui-react'
@@ -8,7 +8,7 @@ import moment from 'moment';
 class EventForm extends Component {
 
     render() {
-        let { onSubmit, handleChange, error, event, isLoading, toggleMandatory } = this.props
+        let { onSubmit, handleChange, error, event, isLoading, toggleMandatory, submitText } = this.props
         return (
             <div>
                 {error ? <Segment inverted color='red' tertiary>{error}</Segment> : null}
@@ -46,9 +46,8 @@ class EventForm extends Component {
                         <Checkbox toggle onChange={() => { toggleMandatory() }} name="mandatory" />
                     </Form.Field>
 
-                    <Button type='submit' onClick={onSubmit}>Create Event</Button>
+                    <Button type='submit' onClick={onSubmit}>{submitText}</Button>
                 </Form>
-
             </div>
         )
     }

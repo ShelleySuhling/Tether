@@ -16,7 +16,6 @@ export let requestEvents = () => {
 }
 
 export let requestCreateEvent = (event) => {
-    'REQUEST CREATE EVENT'
     return dispatch => {
         dispatch({ type: types.CREATE_EVENT_REQUEST })
 
