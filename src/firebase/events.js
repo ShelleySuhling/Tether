@@ -17,6 +17,7 @@ export let createNewEvent = (event) => {
         location: event.location,
         startTime: new Date(event.date.hours(event.startTime.hours())),
         endTime: new Date(event.date.hours(event.endTime.hours())),
+        isMandatory: event.isMandatory,
     }).then(res => {
         return res
     })
