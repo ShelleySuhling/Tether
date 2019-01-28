@@ -15,28 +15,28 @@ class EventForm extends Component {
                 <Form className={isLoading ? "loading" : null}>
                     <Form.Field>
                         <div className="login-form-label">Event Title</div>
-                        <input placeholder='Title' name="title" value={event.title} type='email' onChange={(e) => { handleChange('title', e.target.value) }} />
+                        <input placeholder='Title' name="title" value={event.title} onChange={(e) => { handleChange('title', e.target.value) }} />
                     </Form.Field>
                     <Form.Field>
                         <div className="login-form-label">Location</div>
                         <input placeholder='Location' name="location" value={event.location} onChange={(e) => { handleChange('location', e.target.value) }} />
                     </Form.Field>
                     <Form.Field>
-                        <div className="login-form-label">Start Date</div>
+                        <div className="login-form-label">Date</div>
                         <DatePicker
-                            selected={event.startDate}
-                            onChange={(date) => { handleChange("startDate", date) }}
+                            selected={event.date}
+                            onChange={(date) => { handleChange("date", date) }}
                         />
+                    </Form.Field>
+
+                    <Form.Field>
+                        <div className="login-form-label">Start Time</div>
                         <TimePicker onChange={(time) => { handleChange("startTime", time) }}
                             defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
                             use12Hours format="h:mm a" />
                     </Form.Field>
                     <Form.Field>
-                        <div className="login-form-label">End Date</div>
-                        <DatePicker
-                            selected={event.EndDate}
-                            onChange={(date) => { handleChange("endDate", date) }}
-                        />
+                        <div className="login-form-label">End Time</div>
                         <TimePicker onChange={(time) => { handleChange("endTime", time) }}
                             defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
                             use12Hours format="h:mm a" />

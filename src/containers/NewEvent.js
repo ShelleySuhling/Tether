@@ -12,7 +12,12 @@ class NewEvent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isMandatory: false
+            title: '',
+            location: '',
+            startTime: null,
+            endTime: null,
+            date: null,
+            isMandatory: false,
         }
     }
 
@@ -29,11 +34,13 @@ class NewEvent extends Component {
     }
 
     onSubmit = () => {
+        console.log('SUBMIT HIT')
+        this.props.eventsActions.requestCreateEvent(this.state)
     }
 
     render() {
         console.log(this.state)
-        return <EventForm event={this.state} handleChange={this.handleChange} toggleMandatory={this.toggleMandatory} />
+        return <EventForm event={this.state} handleChange={this.handleChange} toggleMandatory={this.toggleMandatory} onSubmit={this.onSubmit} />
     }
 }
 

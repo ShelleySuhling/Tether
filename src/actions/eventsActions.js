@@ -14,3 +14,21 @@ export let requestEvents = () => {
             })
     }
 }
+
+export let requestCreateEvent = (event) => {
+    'REQUEST CREATE EVENT'
+    return dispatch => {
+        dispatch({ type: types.CREATE_EVENT_REQUEST })
+
+        firebaseEvents.createNewEvent(event)
+            .then(function (docRef) {
+                dispatch({ type: types.CREATE_EVENT_SUCCESS })
+                requestEvents()
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+                dispatch({ type: types.CREATE_EVENT_FAILURE, error: error })
+                console.error("Error adding document: ", error);
+            });
+    }
+}
