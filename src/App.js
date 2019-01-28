@@ -13,7 +13,7 @@ import SignOut from './containers/SignOut'
 import SignUp from './containers/SignUp'
 import EditProfile from './containers/EditProfile'
 import Events from './containers/Events'
-
+import NewEvent from './containers/NewEvent'
 
 
 class App extends Component {
@@ -23,6 +23,14 @@ class App extends Component {
     return (<Route {...rest} render={(props) => (
       session.isAuthenticated ?
         <Component {...props} /> : <Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
+    )} />)
+  }
+
+  AdminRoute = ({ component: Component, ...rest }) => {
+    const { session } = this.props
+    return (<Route {...rest} render={(props) => (
+      (session.user.role === "master") ?
+        <Component {...props} /> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />
     )} />)
   }
 
@@ -39,6 +47,7 @@ class App extends Component {
             {this.ProtectedRoute({ path: '/events', component: Events })}
             {this.ProtectedRoute({ path: '/signout', component: SignOut })}
             {this.ProtectedRoute({ path: '/edit_profile', component: EditProfile })}
+            {this.AdminRoute({ path: '/new_event', component: NewEvent })}
           </div>
         </BrowserRouter>
       </div>)

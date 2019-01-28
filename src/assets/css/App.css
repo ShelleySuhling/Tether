@@ -3,12 +3,63 @@
   padding: 10px;
 }
 
+.nav-container{
+  padding: 0 0 50px 0;
+}
+
 .content-container{
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.events-container{
+  display:flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 50px;
+  padding: 0 5%;
+  text-align: left;
+}
+
+.card-container{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-between;
+  padding: 1px;
+}
+
+.card-info-container{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.card-title{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+  font-size: 25px;
+  padding: 0 0 2px 0;
+}
+
+.card-description{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.card-icons{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.plus-icon{
+
 }
 
 .login-container{
@@ -19,6 +70,13 @@
   font-size: 20px;
   text-align:left;
   padding: 5px;
+}
+
+.form-container{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+  width: 80%;
 }
 
 @keyframes App-logo-spin {

@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as eventsActions from '../actions/eventsActions';
 import PropTypes from 'prop-types';
+import EventBlock from '../components/EventBlock'
+import { Card } from 'semantic-ui-react'
+import moment from 'moment'
+
 import * as _ from 'lodash'
 
 class Events extends Component {
@@ -10,16 +15,38 @@ class Events extends Component {
         this.props.eventsActions.requestEvents()
     }
 
-    renderEvents() {
-        let { events } = this.props
-        return _.map(events.eventsList, (e => { return e.title }))
+    toDate = (date) => {
+        return moment(date.seconds * 1000)
+    }
+
+    collectEventsByView = (view, events) => {
+        if (view === "future") {
+            return _.filter(events.eventsList, (e => {
+                return this.toDate(e.startTime).isAfter(new moment())
+            }))
+        } else if (view === "past") {
+            return _.filter(events.eventsList, (e => {
+                return this.toDate(e.startTime).isBefore(new moment())
+            }))
+        }
+    }
+
+    renderEvents(view_events) {
+        return _.map(view_events, (e => {
+            return <EventBlock key={e.title} event={e} />
+        }))
     }
 
     render() {
+        let view_events = this.collectEventsByView('future', this.props.events)
         return (
             <div className="content-container">
-                {this.renderEvents()}
-            </div>
+                <div className="events-container">
+                    <Card.Group>
+                        {this.renderEvents(view_events)}
+                    </Card.Group>
+                </div>
+            </div >
         )
     }
 }

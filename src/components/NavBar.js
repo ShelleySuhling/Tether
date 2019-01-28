@@ -23,10 +23,13 @@ class NavBar extends Component {
 
   renderDropDown = () => {
     const { activeItem } = this.state
+    const { session } = this.props
+
 
     return (<Dropdown item icon='wrench'>
       <Dropdown.Menu>
         <Menu.Item as={NavLink} exact to='/edit_profile' name='Edit Profile' active={activeItem === 'editprofile'} onClick={this.handleItemClick} />
+        {session.user.role === "master" ? <Menu.Item as={NavLink} exact to='/new_event' name='Create Event' active={activeItem === 'newevent'} onClick={this.handleItemClick} /> : null}
         <Menu.Item as={NavLink} exact to='/signout' name='Sign Out' active={activeItem === 'signout'} onClick={this.handleItemClick} />
       </Dropdown.Menu>
     </Dropdown>)
@@ -36,16 +39,17 @@ class NavBar extends Component {
     const { activeItem } = this.state
     const { session } = this.props
     return (
-      <Menu pointing>
-        <Menu.Menu position='right'>
-          {session.user ? session.user.email : null}
-          <Menu.Item as={NavLink} exact to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-          {!_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/events' name='Events' active={activeItem === 'events'} onClick={this.handleItemClick} /> : null}
-          {!_.isEmpty(session.user) ? this.renderDropDown() : null}
-          {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signin' name='Sign In' active={activeItem === 'signin'} onClick={this.handleItemClick} /> : null}
-          {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signup' name='Sign Up' active={activeItem === 'signup'} onClick={this.handleItemClick} /> : null}
-        </Menu.Menu>
-      </Menu>
+      <div className="nav-container">
+        <Menu pointing>
+          <Menu.Menu position='right'>
+            <Menu.Item as={NavLink} exact to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+            {!_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/events' name='Events' active={activeItem === 'events'} onClick={this.handleItemClick} /> : null}
+            {!_.isEmpty(session.user) ? this.renderDropDown() : null}
+            {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signin' name='Sign In' active={activeItem === 'signin'} onClick={this.handleItemClick} /> : null}
+            {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signup' name='Sign Up' active={activeItem === 'signup'} onClick={this.handleItemClick} /> : null}
+          </Menu.Menu>
+        </Menu>
+      </div>
     )
   }
 }

@@ -7,6 +7,8 @@ import 'semantic-ui-css/semantic.min.css'
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import "antd/dist/antd.css";
+
 
 const { persistor, store } = configureStore()
 

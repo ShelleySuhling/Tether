@@ -26,9 +26,6 @@ class SignIn extends Component {
         if (!_.isEmpty(session.user)) {
             return <Redirect to='/' />
         }
-        // else if (session.pending_signin) {
-        //     return "loading"
-        // }
         else {
             return (
                 <div className="content-container">
