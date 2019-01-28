@@ -12,14 +12,14 @@
   flex-direction: column;
   align-items: space-around;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 5%;
 }
 
 .events-container{
   display:flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 10%;
+  padding: 0 5%;
   text-align: left;
 }
 
@@ -28,7 +28,7 @@
   flex-direction: row;
   text-align: left;
   justify-content: space-between;
-  padding: 2px;
+  padding: 1px;
 }
 
 .card-info-container{
@@ -41,8 +41,8 @@
   display:flex;
   flex-direction: row;
   text-align: left;
-  font-size: 30px;
-  padding: 0 0 10px 0;
+  font-size: 25px;
+  padding: 0 0 2px 0;
 }
 
 .card-description{

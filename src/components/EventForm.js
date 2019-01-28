@@ -10,7 +10,7 @@ class EventForm extends Component {
     render() {
         let { onSubmit, handleChange, error, event, isLoading, toggleMandatory } = this.props
         return (
-            <div className="login-container">
+            <div>
                 {error ? <Segment inverted color='red' tertiary>{error}</Segment> : null}
                 <Form className={isLoading ? "loading" : null}>
                     <Form.Field>
@@ -46,7 +46,7 @@ class EventForm extends Component {
                         <Checkbox toggle onChange={() => { toggleMandatory() }} name="mandatory" />
                     </Form.Field>
 
-                    <Button type='submit' onClick={onSubmit}>Update</Button>
+                    <Button type='submit' onClick={onSubmit}>Create Event</Button>
                 </Form>
 
             </div>

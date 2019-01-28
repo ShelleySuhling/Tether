@@ -6,7 +6,7 @@ class ProfileForm extends Component {
     render() {
         let { onSubmit, handleChange, error, user, isLoading } = this.props
         return (
-            <div className="login-container">
+            <div >
                 {error ? <Segment inverted color='red' tertiary>{error}</Segment> : null}
                 <Form className={isLoading ? "loading" : null}>
                     <Form.Field>

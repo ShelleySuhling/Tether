@@ -7,7 +7,6 @@ class ProfileForm extends Component {
 
     toDate = (date) => {
         //for whatever reason, firebase's .toDate() method of a timestamp wasn't working so I made my own
-        console.log(date)
         return moment(date.seconds * 1000).format('MM/DD/YYYY')
     }
 
