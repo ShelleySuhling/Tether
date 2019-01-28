@@ -16,6 +16,7 @@ class ProfileForm extends Component {
 
     generateDescription = () => {
         let { event } = this.props
+        console.log(event.isMandatory)
 
         return (
             <div className="card-container">

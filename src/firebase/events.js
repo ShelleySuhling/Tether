@@ -12,11 +12,6 @@ export let getEvents = () => {
 }
 
 export let createNewEvent = (event) => {
-
-    console.log(event.date)
-    console.log(event.date.hours(event.startTime.hours()))
-
-
     return firebase.firestore().collection("events").add({
         title: event.title,
         location: event.location,
