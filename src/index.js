@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import "antd/dist/antd.css";
 
+require('dotenv').config()
 
 const { persistor, store } = configureStore()
 
