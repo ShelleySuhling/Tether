@@ -32,10 +32,7 @@ class Events extends Component {
     }
 
     renderEvents(view_events) {
-        console.log(this.props.events)
-
         return _.map(view_events, (e => {
-            console.log('hit')
             return <EventBlock key={e.title} event={e} />
         }))
     }

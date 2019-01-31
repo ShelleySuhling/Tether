@@ -7,6 +7,7 @@ import moment from 'moment';
 
 class EventForm extends Component {
 
+
     render() {
         let { onSubmit, handleChange, error, event, isLoading, toggleMandatory, submitText } = this.props
         return (

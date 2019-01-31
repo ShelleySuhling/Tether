@@ -17,6 +17,7 @@
     "react-validation": "^3.0.7",
     "reactstrap": "^7.1.0",
     "redux": "^4.0.1",
+    "redux-form": "^8.1.0",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.4.1",
