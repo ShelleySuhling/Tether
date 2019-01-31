@@ -11,12 +11,35 @@ export default function events(state = {}, action) {
             console.log('GET_EVENTS_SUCCESS')
             return {
                 ...state,
-                eventsList: action.events
+                eventsList: action.events,
+                newEvent: false
             };
         case types.GET_EVENTS_FAILURE:
             console.log('GET_EVENTS_FAILURE')
             return {
                 ...state,
+                error: action.error
+            };
+        case types.CREATE_EVENT_REQUEST:
+            console.log('CREATE_EVENT_REQUEST')
+            return {
+                ...state,
+                pendingNewEvent: true,
+                newEvent: false
+            };
+        case types.CREATE_EVENT_SUCCESS:
+            console.log('CREATE_EVENT_SUCCESS')
+            return {
+                ...state,
+                pendingNewEvent: false,
+                newEvent: true
+            };
+        case types.CREATE_EVENT_FAILURE:
+            console.log('CREATE_EVENT_FAILURE')
+            return {
+                ...state,
+                newEvent: false,
+                pendingNewEvent: false,
                 error: action.error
             };
         default:

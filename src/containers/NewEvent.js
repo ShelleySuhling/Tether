@@ -4,6 +4,9 @@ import { bindActionCreators } from 'redux';
 import * as eventsActions from '../actions/eventsActions';
 import PropTypes from 'prop-types';
 import EventForm from '../components/EventForm'
+import { Redirect } from 'react-router-dom'
+import * as _ from 'lodash'
+
 
 class NewEvent extends Component {
 
@@ -36,9 +39,20 @@ class NewEvent extends Component {
     }
 
     render() {
-        return (<div className="content-container">
-            <EventForm event={this.state} handleChange={this.handleChange} toggleMandatory={this.toggleMandatory} onSubmit={this.onSubmit} submitText="Create Event" />
-        </div >)
+        let { events } = this.props
+        console.log(events)
+        if (events.newEvent) {
+            return <Redirect to='/events' />
+        } else {
+            return (
+                <div className="content-container">
+                    <EventForm event={this.state}
+                        handleChange={this.handleChange}
+                        toggleMandatory={this.toggleMandatory}
+                        onSubmit={this.onSubmit}
+                        submitText="Create Event" />
+                </div >)
+        }
     }
 }
 
