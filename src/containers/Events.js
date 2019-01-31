@@ -32,7 +32,9 @@ class Events extends Component {
     }
 
     renderEvents(view_events) {
-        return _.map(view_events, (e => {
+        return _.map(_.sortBy(view_events, (e) => {
+            return this.toDate(e.startTime)
+        }), (e => {
             return <EventBlock key={e.title} event={e} />
         }))
     }
@@ -40,7 +42,7 @@ class Events extends Component {
     render() {
         let view_events = this.collectEventsByView('future', this.props.events)
         return (
-            <div className="content-container">
+            <div className="content-container" >
                 <div className="events-container">
                     <Card.Group>
                         {this.renderEvents(view_events)}
