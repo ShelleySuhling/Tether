@@ -35,7 +35,7 @@ class EditEvent extends Component {
                 <div className="content-container">
                     <EventForm event={this.state.event}
                         onSubmit={this.onSubmit}
-                        submitText="Edit Event" />
+                        submitText="Update Event" />
                 </div >)
         }
     }
