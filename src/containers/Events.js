@@ -15,31 +15,29 @@ class Events extends Component {
         this.props.eventsActions.requestEvents()
     }
 
-    toDate = (date) => {
-        return moment(date.seconds * 1000)
-    }
-
     collectEventsByView = (view, events) => {
         if (view === "future") {
             return _.filter(events.eventsList, (e => {
-                return this.toDate(e.startTime).isAfter(new moment())
+                return moment(e.startTime).isAfter(new moment())
             }))
         } else if (view === "past") {
             return _.filter(events.eventsList, (e => {
-                return this.toDate(e.startTime).isBefore(new moment())
+                return moment(e.startTime).isBefore(new moment())
             }))
         }
     }
 
     renderEvents(view_events) {
+        let { session } = this.props
         return _.map(_.sortBy(view_events, (e) => {
-            return this.toDate(e.startTime)
+            return e.startTime
         }), (e => {
-            return <EventBlock key={e.title} event={e} />
+            return <EventBlock key={e.title} event={e} user={session.user} />
         }))
     }
 
     render() {
+        console.log(this.props.events)
         let view_events = this.collectEventsByView('future', this.props.events)
         return (
             <div className="content-container" >
@@ -55,11 +53,13 @@ class Events extends Component {
 
 Events.propTypes = {
     eventsActions: PropTypes.object,
-    events: PropTypes.object
+    events: PropTypes.object,
+    session: PropTypes.object
 };
 function mapStateToProps(state) {
     return {
         events: state.events,
+        session: state.session,
     };
 }
 function mapDispatchToProps(dispatch) {

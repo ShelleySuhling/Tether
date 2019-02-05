@@ -31,3 +31,24 @@ export let requestCreateEvent = (event) => {
             });
     }
 }
+
+
+export let requestEditEvent = (event) => {
+    return dispatch => {
+        dispatch({ type: types.EDIT_EVENT_REQUEST })
+
+        firebaseEvents.editEvent(event)
+            .then(function (docRef) {
+                console.log(docRef)
+                dispatch({ type: types.EDIT_EVENT_SUCCESS })
+                requestEvents()
+                console.log(docRef)
+                // console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+                dispatch({ type: types.EDIT_EVENT_FAILURE, error: error })
+                // console.error("Error adding document: ", error);
+            });
+    }
+}
+

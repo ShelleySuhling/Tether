@@ -56,10 +56,13 @@
   display:flex;
   flex-direction: row;
   text-align: left;
+  padding: -30px;
 }
 
-.plus-icon{
-
+.event-settings-container{
+  height: 100px;
+  width: 50px;
+  background-color: blue;
 }
 
 .login-container{

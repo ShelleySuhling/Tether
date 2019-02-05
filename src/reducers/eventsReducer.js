@@ -42,6 +42,28 @@ export default function events(state = {}, action) {
                 pendingNewEvent: false,
                 error: action.error
             };
+        case types.EDIT_EVENT_REQUEST:
+            console.log('EDIT_EVENT_REQUEST')
+            return {
+                ...state,
+                pendingNewEvent: true,
+                newEvent: false,
+            };
+        case types.EDIT_EVENT_SUCCESS:
+            console.log('EDIT_EVENT_SUCCESS')
+            return {
+                ...state,
+                pendingNewEvent: false,
+                newEvent: true,
+            };
+        case types.EDIT_EVENT_FAILURE:
+            console.log('EDIT_EVENT_FAILURE')
+            return {
+                ...state,
+                newEvent: false,
+                pendingNewEvent: false,
+                error: action.error
+            };
         default:
             return state;
     }
