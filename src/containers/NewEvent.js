@@ -5,11 +5,6 @@ import * as eventsActions from '../actions/eventsActions';
 import PropTypes from 'prop-types';
 import EventForm from '../components/EventForm'
 import { Redirect } from 'react-router-dom'
-import * as _ from 'lodash'
-import moment from 'moment'
-import FormErrors from '../components/FormErrors'
-
-
 
 class NewEvent extends Component {
 

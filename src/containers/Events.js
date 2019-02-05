@@ -37,7 +37,6 @@ class Events extends Component {
     }
 
     render() {
-        console.log(this.props.events)
         let view_events = this.collectEventsByView('future', this.props.events)
         return (
             <div className="content-container" >

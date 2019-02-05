@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Segment } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import { DatePicker, TimePicker } from 'antd';
 import { Checkbox } from 'semantic-ui-react'
 import FormErrors from './FormErrors'
@@ -8,13 +8,15 @@ import moment from 'moment';
 class EventForm extends Component {
     constructor(props) {
         super(props)
-        this.state = this.props.event ? {
-            ...this.props.event,
-            start_time: new moment().hours(moment(this.props.event.startTime).hours()),
-            end_time: new moment().hours(moment(this.props.event.endTime).hours()),
-            date: new moment().date(moment(this.props.event.startTime).date()),
-            errors: []
-        } : {
+        this.state = this.props.event
+            ? {
+                ...this.props.event,
+                start_time: new moment().hours(moment(this.props.event.startTime).hours()),
+                end_time: new moment().hours(moment(this.props.event.endTime).hours()),
+                date: new moment().date(moment(this.props.event.startTime).date()),
+                errors: []
+            }
+            : {
                 title: '',
                 location: '',
                 start_time: new moment(),
@@ -36,7 +38,7 @@ class EventForm extends Component {
     validateState = () => {
         //https://i.imgur.com/QGqncla.gifv
 
-        let { title, location, start_time, end_time, date, isMandatory } = this.state
+        let { title, location, start_time, end_time, date } = this.state
         let errors = []
         if (!title || title.length <= 5) {
             errors.push("Title must be longer than 5 characters.")
@@ -68,7 +70,7 @@ class EventForm extends Component {
     }
 
     onSubmit = () => {
-        if (this.validateState() == 0) {
+        if (this.validateState().length === 0) {
             this.props.onSubmit(this.state)
         } else {
             window.scrollTo(0, 0)

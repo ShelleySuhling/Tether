@@ -6,10 +6,6 @@ import PropTypes from 'prop-types';
 import EventForm from '../components/EventForm'
 import { Redirect } from 'react-router-dom'
 import * as _ from 'lodash'
-import moment from 'moment'
-import FormErrors from '../components/FormErrors'
-
-
 
 class EditEvent extends Component {
 
@@ -17,7 +13,6 @@ class EditEvent extends Component {
         super(props)
         this.state = this.props.event
     }
-
 
     componentWillMount = () => {
         this.setState({
@@ -27,8 +22,6 @@ class EditEvent extends Component {
     }
 
     onSubmit = (event) => {
-        console.log('event form submit', this.state)
-
         this.props.eventsActions.requestEditEvent(event)
     }
 

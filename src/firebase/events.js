@@ -2,10 +2,6 @@ import firebase from '../firebase.js';
 import moment from 'moment'
 
 let makeEvent = (event) => {
-    let start_time = moment(event.start_time)
-    let end_time = moment(event.end_time)
-    let date = moment(event.date)
-
     //This part is an absolute mess, I plan on fixing it later
     let startTimeConstruct = new Date(event.date)
     let endTimeConstruct = new Date(event.date)
@@ -15,8 +11,6 @@ let makeEvent = (event) => {
 
     startTimeConstruct.setMinutes(event.start_time.minutes())
     endTimeConstruct.setMinutes(event.end_time.minutes())
-
-    console.log(startTimeConstruct, endTimeConstruct)
 
     return {
         title: event.title,

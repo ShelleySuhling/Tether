@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Segment } from 'semantic-ui-react'
-import { DatePicker, TimePicker } from 'antd';
-import { Checkbox } from 'semantic-ui-react'
-
-import moment from 'moment';
+import { Segment } from 'semantic-ui-react'
 
 class FormErrors extends Component {
 
