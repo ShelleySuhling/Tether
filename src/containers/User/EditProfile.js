@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import * as usersActions from '../actions/usersActions';
-import * as sessionActions from '../actions/sessionActions';
-import ProfileForm from '../components/ProfileForm'
+import * as usersActions from '../../actions/usersActions';
+import * as sessionActions from '../../actions/sessionActions';
+import ProfileForm from '../../components/Forms/ProfileForm'
 
 
 class EditProfile extends Component {

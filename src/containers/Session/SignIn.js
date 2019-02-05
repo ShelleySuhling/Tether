@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as sessionActions from '../actions/sessionActions';
+import * as sessionActions from '../../actions/sessionActions';
 import PropTypes from 'prop-types';
 import * as _ from 'lodash'
-import EmailPasswordForm from '../components/EmailPasswordForm'
+import EmailPasswordForm from '../../components/Forms/EmailPasswordForm'
 
 
 class SignIn extends Component {
