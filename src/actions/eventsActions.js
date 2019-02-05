@@ -23,11 +23,26 @@ export let requestCreateEvent = (event) => {
             .then(function (docRef) {
                 dispatch({ type: types.CREATE_EVENT_SUCCESS })
                 requestEvents()
-                console.log("Document written with ID: ", docRef.id);
             })
             .catch(function (error) {
                 dispatch({ type: types.CREATE_EVENT_FAILURE, error: error })
-                console.error("Error adding document: ", error);
             });
     }
 }
+
+
+export let requestEditEvent = (event) => {
+    return dispatch => {
+        dispatch({ type: types.EDIT_EVENT_REQUEST })
+
+        firebaseEvents.editEvent(event)
+            .then(function (docRef) {
+                dispatch({ type: types.EDIT_EVENT_SUCCESS })
+                requestEvents()
+            })
+            .catch(function (error) {
+                dispatch({ type: types.EDIT_EVENT_FAILURE, error: error })
+            });
+    }
+}
+

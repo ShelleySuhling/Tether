@@ -71,13 +71,22 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## Firebase Functions
 Followed this tutorial `https://firebase.googleblog.com/2017/03/how-to-schedule-cron-jobs-with-cloud.html`
 
-## scripts for deploying
+### scripts for deploying
 
 To deploy cloud functions only: `firebase deploy --only functions --project community-service-application`
+
 To update cron job: `gcloud app deploy functions/cron.yaml`
 
-## scripts for logging/debugging
+### scripts for logging/debugging
 
 Manual pubsub (run-now): `gcloud pubsub topics publish hourly-tick --message="Hello"`
+
 For logging, go to firebase console -> functions -> logs
+
+## References
+
+redux-form validation: https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124
+
+
+
 
