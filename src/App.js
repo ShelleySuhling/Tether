@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import NavBar from './components/NavBar'
-import Home from './containers/Home'
-import SignIn from './containers/SignIn'
-import SignOut from './containers/SignOut'
-import SignUp from './containers/SignUp'
-import EditProfile from './containers/EditProfile'
-import Events from './containers/Events'
-import NewEvent from './containers/NewEvent'
-import EditEvent from './containers/EditEvent'
+import NavBar from './components/NavBar/NavBar'
+import Home from './containers/Home/Home'
+import SignIn from './containers/Session/SignIn'
+import SignOut from './containers/Session/SignOut'
+import SignUp from './containers/Session/SignUp'
+import EditProfile from './containers/User/EditProfile'
+import Events from './containers/Events/Events'
+import NewEvent from './containers/Events/NewEvent'
+import EditEvent from './containers/Events/EditEvent'
 
 
 

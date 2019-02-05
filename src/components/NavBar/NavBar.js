@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as sessionActions from '../actions/sessionActions';
+import * as sessionActions from '../../actions/sessionActions';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom'
 import { Menu, Dropdown } from 'semantic-ui-react'
 import * as _ from 'lodash'
 
 
+//This needs to be refactored, shouldn't be calling actions
 class NavBar extends Component {
 
   constructor(props) {

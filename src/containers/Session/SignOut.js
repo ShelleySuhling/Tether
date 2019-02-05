@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as sessionActions from '../actions/sessionActions';
+import * as sessionActions from '../../actions/sessionActions';
 import PropTypes from 'prop-types';
 
 class SignOut extends Component {

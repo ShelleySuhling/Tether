@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as eventsActions from '../actions/eventsActions';
+import * as eventsActions from '../../actions/eventsActions';
 import PropTypes from 'prop-types';
-import EventBlock from '../components/EventBlock'
+import EventBlock from '../../components/Events/EventBlock'
 import { Card } from 'semantic-ui-react'
 import moment from 'moment'
 //https://www.npmjs.com/package/react-responsive
