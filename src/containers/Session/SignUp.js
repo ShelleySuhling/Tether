@@ -34,7 +34,11 @@ class SignUp extends Component {
         else {
             return (
                 <div className="content-container">
-                    <EmailPasswordForm onSubmit={this.onSubmit} handleChange={this.handleChange} confirmPassword={true} error={session.error} />
+                    <EmailPasswordForm onSubmit={this.onSubmit}
+                        handleChange={this.handleChange}
+                        confirmPassword={true}
+                        error={session.error}
+                        submitText="Sign Up" />
                 </div>
             )
         }

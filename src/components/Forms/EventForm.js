@@ -82,7 +82,7 @@ class EventForm extends Component {
         let event = this.state
 
         return (
-            <div>
+            <div className="form-container">
                 <FormErrors errors={this.state.errors} />
                 <Form className={isLoading ? "loading" : null}>
                     <Form.Field>
@@ -127,7 +127,9 @@ class EventForm extends Component {
                             name="mandatory" />
                     </Form.Field>
 
-                    <Button type='submit' onClick={this.onSubmit}>{submitText}</Button>
+                    <div className="submit-item">
+                        <Button type='submit' onClick={this.onSubmit}>{submitText}</Button>
+                    </div>
                 </Form>
             </div>
         )

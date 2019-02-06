@@ -12,8 +12,6 @@ import Responsive from 'react-responsive';
 
 import * as _ from 'lodash'
 
-const Desktop = props => <Responsive {...props} minWidth={992} />;
-const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991} />;
 const Mobile = props => <Responsive {...props} maxWidth={767} />;
 const Default = props => <Responsive {...props} minWidth={768} />;
 class Events extends Component {
@@ -46,7 +44,6 @@ class Events extends Component {
         let view_events = this.collectEventsByView('future', this.props.events)
         return (
             <div className="content-container" >
-
                 <Default>
                     <div className="events-container-desktop">
                         <Card.Group>
