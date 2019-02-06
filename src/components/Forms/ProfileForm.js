@@ -6,7 +6,7 @@ class ProfileForm extends Component {
     render() {
         let { onSubmit, handleChange, error, user, isLoading } = this.props
         return (
-            <div>
+            <div className="form-container">
                 {error ? <Segment inverted color='red' tertiary>{error}</Segment> : null}
                 <Form className={isLoading ? "loading" : null}>
                     <Form.Field>
@@ -21,7 +21,9 @@ class ProfileForm extends Component {
                         <div className="login-form-label">Phone Number</div>
                         <input placeholder='Phone Number' name="phoneNumber" value={user.phoneNumber} onChange={handleChange} />
                     </Form.Field>
-                    <Button type='submit' onClick={onSubmit}>Update</Button>
+                    <div className="submit-item">
+                        <Button type='submit' onClick={onSubmit}>Update</Button>
+                    </div>
                 </Form>
             </div>
         )

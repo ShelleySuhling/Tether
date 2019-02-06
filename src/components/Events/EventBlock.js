@@ -25,7 +25,11 @@ class EventBlock extends Component {
                 <div className="card-icon-container">
                     {/* <div className="card-icons">
                     </div> */}
-                    {event.isMandatory ? <Icon size='big' color="blue" name='anchor' /> : <div>{null}</div>}
+                    {event.isMandatory
+                        ? <div className="corner-icon">
+                            <Icon size='huge' color="blue" name='caret up' />
+                        </div>
+                        : <div>{null}</div>}
 
                     {user.role === "master"
                         ? <Link to={"/edit_event/" + event.id}>

@@ -29,7 +29,12 @@ class SignIn extends Component {
         else {
             return (
                 <div className="content-container">
-                    <EmailPasswordForm onSubmit={this.onSubmit} handleChange={this.handleChange} confirmPassword={false} error={session.error} isLoading={session.pending_signin} />
+                    <EmailPasswordForm onSubmit={this.onSubmit}
+                        handleChange={this.handleChange}
+                        confirmPassword={false}
+                        error={session.error}
+                        isLoading={session.pending_signin}
+                        submitText="Sign In" />
                 </div>
             )
         }

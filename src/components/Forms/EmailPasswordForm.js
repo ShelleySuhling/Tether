@@ -4,9 +4,9 @@ import { Button, Form, Segment } from 'semantic-ui-react'
 class EmailPasswordForm extends Component {
 
     render() {
-        let { confirmPassword, onSubmit, handleChange, error, isLoading } = this.props
+        let { confirmPassword, onSubmit, handleChange, error, isLoading, submitText } = this.props
         return (
-            <div className="login-container">
+            <div className="form-container">
                 {error ? <Segment inverted color='red' tertiary>{error}</Segment> : null}
                 <Form className={isLoading ? "loading" : null}>
                     <Form.Field>
@@ -25,7 +25,9 @@ class EmailPasswordForm extends Component {
                         </Form.Field>
                         : null}
 
-                    <Button type='submit' onClick={onSubmit}>Log In</Button>
+                    <div className="submit-item">
+                        <Button type='submit' onClick={onSubmit}>{submitText}</Button>
+                    </div>
                 </Form>
             </div>
         )
