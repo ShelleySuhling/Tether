@@ -5,28 +5,43 @@ import { bindActionCreators } from 'redux';
 import * as eventsActions from '../../actions/eventsActions';
 import PropTypes from 'prop-types';
 import EventBlock from '../../components/Events/EventBlock'
+import EventHeader from '../../components/Events/EventHeader'
 import { Card } from 'semantic-ui-react'
 import moment from 'moment'
 //https://www.npmjs.com/package/react-responsive
 import Responsive from 'react-responsive';
 
+
 import * as _ from 'lodash'
 
 const Mobile = props => <Responsive {...props} maxWidth={767} />;
 const Default = props => <Responsive {...props} minWidth={768} />;
+
 class Events extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            view_context: "this",
+            view_time: "week",
+            events: this.props.events.eventsList,
+            now: moment(),
+        }
+    }
     componentWillMount() {
         this.props.eventsActions.requestEvents()
     }
 
-    collectEventsByView = (view, events) => {
-        if (view === "future") {
-            return _.filter(events.eventsList, (e => {
-                return moment(e.startTime).isAfter(new moment())
+    collectEventsByView = () => {
+        let { view_context, view_time, events, now } = this.state
+
+
+        if (view_context == "this") {
+            return _.filter(events, (e => {
+                return (now.isSame(moment(e.startTime), view_time) && now.isBefore(moment(e.startTime)))
             }))
-        } else if (view === "past") {
-            return _.filter(events.eventsList, (e => {
-                return moment(e.startTime).isBefore(new moment())
+        } else if (view_context == "next") {
+            return _.filter(events, (e => {
+                return (now.add(1, view_time).isSame(moment(e.startTime), view_time) && now.isBefore(moment(e.startTime)))
             }))
         }
     }
@@ -41,11 +56,14 @@ class Events extends Component {
     }
 
     render() {
-        let view_events = this.collectEventsByView('future', this.props.events)
+        let { session } = this.props
+        let view_events = this.collectEventsByView()
+
         return (
             <div className="content-container" >
                 <Default>
                     <div className="events-container-desktop">
+                        <EventHeader session={session} />
                         <Card.Group>
                             {this.renderEvents(view_events)}
                         </Card.Group>
@@ -53,6 +71,10 @@ class Events extends Component {
                 </Default>
                 <Mobile>
                     <div className="events-container-mobile">
+                        <div className="events-header">
+                            Hey {session.user.fullName}, <br />
+                            here are your events for this week
+                        </div>
                         <Card.Group>
                             {this.renderEvents(view_events)}
                         </Card.Group>
