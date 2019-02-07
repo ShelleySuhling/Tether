@@ -25,7 +25,7 @@ let time_options = [
 class EventHeader extends Component {
 
     handleChange = (event, element) => {
-        console.log("change", event, element)
+        this.props.handleViewChange(element.name, element.value)
     }
 
     render() {
@@ -34,10 +34,10 @@ class EventHeader extends Component {
             <div className="events-header-line">Hey {session.user.fullName.split(' ')[0]},</div>
             <div className="events-header-line">here are your events for
                 <div className="dropdown-wrapper">
-                    <Dropdown inline options={context_options} defaultValue={context_options[0].value} onChange={this.handleChange} />
+                    <Dropdown inline options={context_options} name="view_context" defaultValue={context_options[0].value} onChange={this.handleChange} />
                 </div>
                 <div className="dropdown-wrapper">
-                    <Dropdown inline options={time_options} defaultValue={time_options[0].value} onChange={this.handleChange} />
+                    <Dropdown inline options={time_options} name="view_time" defaultValue={time_options[0].value} onChange={this.handleChange} />
                 </div>.
             </div>
         </div>

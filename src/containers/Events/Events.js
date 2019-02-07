@@ -6,6 +6,7 @@ import * as eventsActions from '../../actions/eventsActions';
 import PropTypes from 'prop-types';
 import EventBlock from '../../components/Events/EventBlock'
 import EventHeader from '../../components/Events/EventHeader'
+
 import { Card } from 'semantic-ui-react'
 import moment from 'moment'
 //https://www.npmjs.com/package/react-responsive
@@ -24,7 +25,6 @@ class Events extends Component {
             view_context: "this",
             view_time: "week",
             events: this.props.events.eventsList,
-            now: moment(),
         }
     }
     componentWillMount() {
@@ -32,18 +32,31 @@ class Events extends Component {
     }
 
     collectEventsByView = () => {
-        let { view_context, view_time, events, now } = this.state
-
+        let { view_context, view_time, events } = this.state
+        console.log('HIT')
+        let now = moment()
 
         if (view_context == "this") {
+            console.log('HIT2')
+
             return _.filter(events, (e => {
+                console.log(now.isSame(moment(e.startTime), view_time), moment(now), moment(e.startTime), view_time)
                 return (now.isSame(moment(e.startTime), view_time) && now.isBefore(moment(e.startTime)))
             }))
         } else if (view_context == "next") {
+            console.log('HIT3')
+
             return _.filter(events, (e => {
                 return (now.add(1, view_time).isSame(moment(e.startTime), view_time) && now.isBefore(moment(e.startTime)))
             }))
         }
+    }
+
+    handleViewChange = (name, value) => {
+        console.log(name, value)
+        this.setState({
+            [name]: value,
+        })
     }
 
     renderEvents(view_events) {
@@ -58,23 +71,22 @@ class Events extends Component {
     render() {
         let { session } = this.props
         let view_events = this.collectEventsByView()
-
+        console.log(this.state, this.props.events)
         return (
             <div className="content-container" >
                 <Default>
                     <div className="events-container-desktop">
-                        <EventHeader session={session} />
-                        <Card.Group>
-                            {this.renderEvents(view_events)}
-                        </Card.Group>
+                        <EventHeader session={session} handleViewChange={this.handleViewChange} />
+                        <div className="events-card-container">
+                            <Card.Group>
+                                {this.renderEvents(view_events)}
+                            </Card.Group>
+                        </div>
                     </div>
                 </Default>
                 <Mobile>
                     <div className="events-container-mobile">
-                        <div className="events-header">
-                            Hey {session.user.fullName}, <br />
-                            here are your events for this week
-                        </div>
+                        <EventHeader session={session} handleViewChange={this.handleViewChange} />
                         <Card.Group>
                             {this.renderEvents(view_events)}
                         </Card.Group>
