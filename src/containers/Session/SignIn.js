@@ -24,7 +24,7 @@ class SignIn extends Component {
     render() {
         const { session } = this.props
         if (!_.isEmpty(session.user)) {
-            return <Redirect to='/' />
+            return <Redirect to='/events' />
         }
         else {
             return (

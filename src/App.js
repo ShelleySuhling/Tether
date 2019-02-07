@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import NavBar from './components/NavBar/NavBar'
-import Home from './containers/Home/Home'
 import SignIn from './containers/Session/SignIn'
 import SignOut from './containers/Session/SignOut'
 import SignUp from './containers/Session/SignUp'
@@ -49,7 +48,7 @@ class App extends Component {
         <BrowserRouter>
           <div style={{ height: '100%' }}>
             <NavBar isAuthenticated={session.isAuthenticated} />
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' component={SignIn} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             {this.ProtectedRoute({ path: '/events', component: Events })}
