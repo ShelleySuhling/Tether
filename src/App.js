@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div>
+          <div style={{ height: '100%' }}>
             <NavBar isAuthenticated={session.isAuthenticated} />
             <Route exact path='/' component={Home} />
             <Route path='/signin' component={SignIn} />
