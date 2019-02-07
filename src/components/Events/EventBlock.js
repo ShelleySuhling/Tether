@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
 import { Card, Icon } from 'semantic-ui-react'
 import moment from 'moment'
 
-class EventBlock extends Component {
-
+class EventBlock_Mobile extends Component {
     generateDescription = () => {
         let { event, user } = this.props
         return (
-            <div className="card-container">
+            <div className="card-wrapper">
                 <div className="card-info-container">
                     <div className="card-title">
                         {event.title}
@@ -52,4 +51,4 @@ class EventBlock extends Component {
 
 }
 
-export default EventBlock
+export default EventBlock_Mobile

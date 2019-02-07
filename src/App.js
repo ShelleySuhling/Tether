@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Redirect } from "react-router-dom";
 import './assets/css/App.css';
+import './assets/css/EventHeader.css';
 import * as sessionActions from './actions/sessionActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';

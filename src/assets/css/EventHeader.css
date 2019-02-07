@@ -1,0 +1,36 @@
+.events-header{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: left;
+    font-size: 30px;
+    color: #4c92db;
+    margin: 0 0 30px 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.events-header-line{
+    display:flex;
+    flex-direction: row;
+    width: auto;
+    flex-wrap: wrap;
+}
+
+.dropdown-wrapper{
+    width: auto;
+    margin: 0 6px 0;
+    border-bottom: dotted pink 3px;
+}
+
+.dropdown-wrapper.mobile{
+    background-color: blue;
+    width: auto;
+    margin: 0 6px 0;
+    border-bottom: dotted pink 3px;
+}
+
+.dropdown-wrapper .ui.inline.dropdown .dropdown.icon{
+    display: none;
+}
+
