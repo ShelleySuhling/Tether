@@ -10,13 +10,13 @@ import EventHeader from '../../components/Events/EventHeader'
 import { Card } from 'semantic-ui-react'
 import moment from 'moment'
 //https://www.npmjs.com/package/react-responsive
-import Responsive from 'react-responsive';
 
 
 import * as _ from 'lodash'
 
-const Mobile = props => <Responsive {...props} maxWidth={767} />;
-const Default = props => <Responsive {...props} minWidth={768} />;
+import Mobile from '../../components/Mobile'
+import Default from '../../components/Default'
+
 
 class Events extends Component {
     constructor(props) {
@@ -33,27 +33,18 @@ class Events extends Component {
 
     collectEventsByView = () => {
         let { view_context, view_time, events } = this.state
-        console.log('HIT')
-        let now = moment()
-
         if (view_context == "this") {
-            console.log('HIT2')
-
             return _.filter(events, (e => {
-                console.log(now.isSame(moment(e.startTime), view_time), moment(now), moment(e.startTime), view_time)
-                return (now.isSame(moment(e.startTime), view_time) && now.isBefore(moment(e.startTime)))
+                return (moment().isSame(moment(e.startTime), view_time) && moment().isBefore(moment(e.startTime)))
             }))
         } else if (view_context == "next") {
-            console.log('HIT3')
-
             return _.filter(events, (e => {
-                return (now.add(1, view_time).isSame(moment(e.startTime), view_time) && now.isBefore(moment(e.startTime)))
+                return (moment().add(1, view_time).isSame(moment(e.startTime), view_time) && moment().isBefore(moment(e.startTime)))
             }))
         }
     }
 
     handleViewChange = (name, value) => {
-        console.log(name, value)
         this.setState({
             [name]: value,
         })
@@ -71,7 +62,6 @@ class Events extends Component {
     render() {
         let { session } = this.props
         let view_events = this.collectEventsByView()
-        console.log(this.state, this.props.events)
         return (
             <div className="content-container" >
                 <Default>

@@ -11,10 +11,12 @@ import "antd/dist/antd.css";
 
 require('dotenv').config()
 
+
 const { persistor, store } = configureStore()
+const routerContext = React.createContext('light');
 
 ReactDOM.render(
-    (<Provider store={store}>
+    (<Provider store={store} context={routerContext}>
         <PersistGate loading={null} persistor={persistor}>
             <App />
         </PersistGate>

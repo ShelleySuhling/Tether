@@ -21,10 +21,14 @@ class SignIn extends Component {
         this.props.sessionActions.requestSignIn(this.state.email, this.state.password)
     }
 
+    redirectToEvents = () => {
+        return <Redirect to='/events' />
+    }
+
     render() {
         const { session } = this.props
         if (!_.isEmpty(session.user)) {
-            return <Redirect to='/events' />
+            return this.redirectToEvents()
         }
         else {
             return (

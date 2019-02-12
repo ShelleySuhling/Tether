@@ -1,0 +1,77 @@
+[debug] [2019-02-08T22:28:53.268Z] ----------------------------------------------------------------------
+[debug] [2019-02-08T22:28:53.270Z] Command:       /Users/shelleysuhling/.nvm/versions/node/v10.0.0/bin/node /usr/local/bin/firebase deploy --only functions --project community-service-application
+[debug] [2019-02-08T22:28:53.270Z] CLI Version:   6.3.0
+[debug] [2019-02-08T22:28:53.270Z] Platform:      darwin
+[debug] [2019-02-08T22:28:53.270Z] Node Version:  v10.0.0
+[debug] [2019-02-08T22:28:53.271Z] Time:          Fri Feb 08 2019 14:28:53 GMT-0800 (PST)
+[debug] [2019-02-08T22:28:53.271Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-08T22:28:53.284Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-08T22:28:53.284Z] > authorizing via signed-in user
+[debug] [2019-02-08T22:28:53.284Z] [iam] checking project community-service-application for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2019-02-08T22:28:53.286Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-02-08T22:28:53.286Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-02-08T22:28:53.521Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-08T22:28:53.537Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/community-service-application:testIamPermissions  
+
+[debug] [2019-02-08T22:28:53.804Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'community-service-application'...
+[info] 
+[info] i  deploying functions
+[debug] [2019-02-08T22:28:55.735Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.1.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "twilio": "^3.27.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-02-08T22:28:55.738Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/community-service-application?view=CONSUMER_VIEW  
+ 
+[debug] [2019-02-08T22:28:55.738Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/community-service-application?view=CONSUMER_VIEW  
+ 
+[debug] [2019-02-08T22:28:56.704Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-08T22:28:56.721Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2019-02-08T22:28:56.722Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/community-service-application  
+ 
+[debug] [2019-02-08T22:28:56.984Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-08T22:28:56.985Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/470621411262:getServerAppConfig  
+ 
+[debug] [2019-02-08T22:28:57.268Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-02-08T22:28:57.270Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/community-service-application/configs  
+ 
+[debug] [2019-02-08T22:28:57.534Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (44.89 KB) for uploading
+[debug] [2019-02-08T22:28:58.385Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/community-service-application/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-02-08T22:28:59.023Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-08T22:28:59.024Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-41987b59-5fdf-4155-8d06-a91acad9c1da/6f70eea4-4188-4e86-a2fd-6868c92dfee1.zip?GoogleAccessId=service-470621411262@gcf-admin-robot.iam.gserviceaccount.com&Expires=1549666738&Signature=cOAmbRZAHclysiAd1EyisZlVsxrbITScCQvSRCt56FLiOP6o6ETXOOzb3SuGx4U%2FKNGadVY3vS%2Bpq4CEcQS%2Br4eujhGqMf1VLpE9TNT5ZNA9uRS8CkOJRfiDks9fArH3LiKkEdzKaK3Bb0kziqek0JVN%2FPgMaJkJSqVkdaUDhqX02rEIx5df1iAvV2LQpMF3ribqF4hG4pEM9ppZLQxbDFPQSBOVJ030jYJz9G1QTbBb%2FS46%2FeIKxGaAJERifNWLOWSOGns8KmQfRQSzgZAnG56rqGmYpdkYWwV%2Fa%2BMY8s6caGdQyI53GP4jIH23bZb5rfLWuQwEf4RxKJE4rjbXHg%3D%3D  
+
+[debug] [2019-02-08T22:28:59.416Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2019-02-08T22:28:59.419Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/community-service-application/locations/-/functions  
+ 
+[debug] [2019-02-08T22:28:59.877Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 6 function hourly_job(us-central1)...
+[debug] [2019-02-08T22:28:59.879Z] Trigger is:  {"eventTrigger":{"resource":"projects/community-service-application/topics/hourly-tick","eventType":"google.pubsub.topic.publish","service":"pubsub.googleapis.com"}}
+[debug] [2019-02-08T22:28:59.880Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/community-service-application/locations/us-central1/functions/hourly_job {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+
+[debug] [2019-02-08T22:29:00.695Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-08T22:29:00.698Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y29tbXVuaXR5LXNlcnZpY2UtYXBwbGljYXRpb24vdXMtY2VudHJhbDEvaG91cmx5X2pvYi9pVExQU2pENWhucw  
+ 

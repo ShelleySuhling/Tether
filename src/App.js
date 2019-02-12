@@ -19,9 +19,6 @@ import EditEvent from './containers/Events/EditEvent'
 //https://www.npmjs.com/package/react-responsive
 import Responsive from 'react-responsive';
 
-const Mobile = props => <Responsive {...props} maxWidth={767} />;
-const Default = props => <Responsive {...props} minWidth={768} />;
-
 
 class App extends Component {
 

@@ -23,21 +23,22 @@ class SignUp extends Component {
         this.props.sessionActions.requestSignUp(this.state.email, this.state.password)
     }
 
+    redirectToEvents = () => {
+        return <Redirect to='/events' />
+    }
 
     render() {
         const { session } = this.props
         if (!_.isEmpty(session.user)) {
-            return <Redirect to='/' />
-        } else if (session.pending_signup) {
-            return "loading"
-        }
-        else {
+            return this.redirectToEvents()
+        } else {
             return (
                 <div className="content-container">
                     <EmailPasswordForm onSubmit={this.onSubmit}
                         handleChange={this.handleChange}
                         confirmPassword={true}
                         error={session.error}
+                        isLoading={session.pending_signup}
                         submitText="Sign Up" />
                 </div>
             )

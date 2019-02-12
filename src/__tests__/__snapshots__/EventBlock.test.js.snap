@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventBlock matches snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventBlock
+    event={
+      Object {
+        "endDate": "2018-01-05T15:30:00.000Z",
+        "id": 3,
+        "isMandatory": true,
+        "location": "sample location",
+        "startDate": "2018-01-05T12:30:00.000Z",
+        "title": "sample title",
+      }
+    }
+    user={
+      Object {
+        "role": "master",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "3",
+    "nodeType": "class",
+    "props": Object {
+      "color": "blue",
+      "description": <div
+        className="card-wrapper"
+      >
+        <div
+          className="card-info-container"
+        >
+          <div
+            className="card-title"
+          >
+            sample title
+            <div
+              className="card-icons"
+            />
+          </div>
+          <div
+            className="card-description"
+          >
+            <div>
+              <Icon
+                as="i"
+                color="blue"
+                name="map marker alternate"
+              />
+               
+              sample location
+            </div>
+            <div>
+              <Icon
+                as="i"
+                color="blue"
+                name="calendar outline"
+              />
+               
+              Jan 1st 18
+            </div>
+            <div>
+              <Icon
+                as="i"
+                color="blue"
+                name="clock outline"
+              />
+              12:00 AM
+               - 
+              12:00 AM
+            </div>
+          </div>
+        </div>
+        <div
+          className="card-icon-container"
+        >
+          <div
+            className="corner-icon"
+          >
+            <Icon
+              as="i"
+              color="blue"
+              name="caret up"
+              size="huge"
+            />
+          </div>
+          <Link
+            replace={false}
+            to="/edit_event/3"
+          >
+            <Icon
+              as="i"
+              color="blue"
+              name="pencil alternate"
+              size="large"
+            />
+          </Link>
+        </div>
+      </div>,
+      "fluid": true,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "3",
+      "nodeType": "class",
+      "props": Object {
+        "color": "blue",
+        "description": <div
+          className="card-wrapper"
+        >
+          <div
+            className="card-info-container"
+          >
+            <div
+              className="card-title"
+            >
+              sample title
+              <div
+                className="card-icons"
+              />
+            </div>
+            <div
+              className="card-description"
+            >
+              <div>
+                <Icon
+                  as="i"
+                  color="blue"
+                  name="map marker alternate"
+                />
+                 
+                sample location
+              </div>
+              <div>
+                <Icon
+                  as="i"
+                  color="blue"
+                  name="calendar outline"
+                />
+                 
+                Jan 1st 18
+              </div>
+              <div>
+                <Icon
+                  as="i"
+                  color="blue"
+                  name="clock outline"
+                />
+                12:00 AM
+                 - 
+                12:00 AM
+              </div>
+            </div>
+          </div>
+          <div
+            className="card-icon-container"
+          >
+            <div
+              className="corner-icon"
+            >
+              <Icon
+                as="i"
+                color="blue"
+                name="caret up"
+                size="huge"
+              />
+            </div>
+            <Link
+              replace={false}
+              to="/edit_event/3"
+            >
+              <Icon
+                as="i"
+                color="blue"
+                name="pencil alternate"
+                size="large"
+              />
+            </Link>
+          </div>
+        </div>,
+        "fluid": true,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
