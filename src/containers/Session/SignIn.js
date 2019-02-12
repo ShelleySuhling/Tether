@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import * as _ from 'lodash'
 import EmailPasswordForm from '../../components/Forms/EmailPasswordForm'
 
-
 class SignIn extends Component {
     componentWillUnmount() {
         this.props.sessionActions.clearAuthErrors()
@@ -21,10 +20,14 @@ class SignIn extends Component {
         this.props.sessionActions.requestSignIn(this.state.email, this.state.password)
     }
 
+    redirectToEvents = () => {
+        return <Redirect to='/events' />
+    }
+
     render() {
         const { session } = this.props
         if (!_.isEmpty(session.user)) {
-            return <Redirect to='/events' />
+            return this.redirectToEvents()
         }
         else {
             return (

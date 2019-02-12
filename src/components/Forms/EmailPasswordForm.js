@@ -21,7 +21,7 @@ class EmailPasswordForm extends Component {
                     {confirmPassword
                         ? <Form.Field>
                             <div className="login-form-label">Confirm Password</div>
-                            <input type='password' placeholder='Password' onChange={handleChange} />
+                            <input type='password-confirm' placeholder='Password' onChange={handleChange} />
                         </Form.Field>
                         : null}
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card, Icon } from 'semantic-ui-react'
 import moment from 'moment'
 
-class EventBlock_Mobile extends Component {
+class EventBlock extends Component {
     generateDescription = () => {
         let { event, user } = this.props
         return (
@@ -12,7 +12,6 @@ class EventBlock_Mobile extends Component {
                     <div className="card-title">
                         {event.title}
                         <div className="card-icons">
-                            {/* {event.isMandatory ? <Icon color="blue" name='anchor' /> : null} */}
                         </div>
                     </div>
                     <div className="card-description">
@@ -22,8 +21,6 @@ class EventBlock_Mobile extends Component {
                     </div>
                 </div>
                 <div className="card-icon-container">
-                    {/* <div className="card-icons">
-                    </div> */}
                     {event.isMandatory
                         ? <div className="corner-icon">
                             <Icon size='huge' color="blue" name='caret up' />
@@ -51,4 +48,4 @@ class EventBlock_Mobile extends Component {
 
 }
 
-export default EventBlock_Mobile
+export default EventBlock

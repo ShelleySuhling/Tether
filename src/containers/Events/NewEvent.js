@@ -19,10 +19,14 @@ class NewEvent extends Component {
         this.props.eventsActions.requestCreateEvent(event)
     }
 
+    redirectToEvents = () => {
+        return <Redirect to='/events' />
+    }
+
     render() {
         let { events } = this.props
         if (events.newEvent) {
-            return <Redirect to='/events' />
+            return this.redirectToEvents()
         } else {
             return (
                 <div className="content-container">
