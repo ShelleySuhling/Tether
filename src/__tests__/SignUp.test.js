@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import Enzyme from 'enzyme'
+import { shallow } from 'enzyme';
 import MockDate from 'mockdate'
-import firebase from '../firebase'
-import EmailPasswordForm from '../components/Forms/EmailPasswordForm'
 
+import EmailPasswordForm from '../components/Forms/EmailPasswordForm'
 import SignUp from '../containers/Session/SignUp';
 
-Enzyme.configure({ adapter: new Adapter() });
-
 import configureStore from '../store/configureStore';
-
 const { store } = configureStore()
+
 describe('SignUp', () => {
     MockDate.set('1/1/2018');
     let submit = jest.fn();

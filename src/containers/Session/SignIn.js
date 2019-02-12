@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import * as _ from 'lodash'
 import EmailPasswordForm from '../../components/Forms/EmailPasswordForm'
 
-
 class SignIn extends Component {
     componentWillUnmount() {
         this.props.sessionActions.clearAuthErrors()

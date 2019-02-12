@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import moment from 'moment'
-import Enzyme from 'enzyme'
 import MockDate from 'mockdate'
 
 import Events from '../containers/Events/Events';
@@ -11,10 +9,9 @@ import EventHeader from '../components/Events/EventHeader'
 import Mobile from '../components/Mobile'
 import Default from '../components/Default'
 
-Enzyme.configure({ adapter: new Adapter() });
-
 import configureStore from '../store/configureStore';
 const { store } = configureStore()
+
 describe('Events', () => {
   MockDate.set('1/1/2018');
   const eventsComponentWrapper = shallow(<Events store={store} />).dive();

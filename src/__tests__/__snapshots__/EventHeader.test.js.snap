@@ -1,0 +1,771 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventHeader matches snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventHeader
+    handleViewChange={[MockFunction]}
+    session={
+      Object {
+        "user": Object {
+          "fullName": "Test User",
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="events-header-line"
+        >
+          Hey 
+          Test
+          ,
+        </div>,
+        <div
+          className="events-header-line"
+        >
+          here are your events for
+          <div
+            className="dropdown-wrapper"
+          >
+            <Dropdown
+              additionLabel="Add "
+              additionPosition="top"
+              closeOnBlur={true}
+              deburr={false}
+              defaultValue="this"
+              icon="dropdown"
+              inline={true}
+              minCharacters={1}
+              name="view_context"
+              noResultsMessage="No results found."
+              onChange={[Function]}
+              openOnFocus={true}
+              options={
+                Array [
+                  Object {
+                    "text": "this",
+                    "value": "this",
+                  },
+                  Object {
+                    "text": "next",
+                    "value": "next",
+                  },
+                ]
+              }
+              renderLabel={[Function]}
+              searchInput="text"
+              selectOnBlur={true}
+              selectOnNavigation={true}
+              wrapSelection={true}
+            />
+          </div>
+          <div
+            className="dropdown-wrapper"
+          >
+            <Dropdown
+              additionLabel="Add "
+              additionPosition="top"
+              closeOnBlur={true}
+              deburr={false}
+              defaultValue="week"
+              icon="dropdown"
+              inline={true}
+              minCharacters={1}
+              name="view_time"
+              noResultsMessage="No results found."
+              onChange={[Function]}
+              openOnFocus={true}
+              options={
+                Array [
+                  Object {
+                    "text": "week",
+                    "value": "week",
+                  },
+                  Object {
+                    "text": "month",
+                    "value": "month",
+                  },
+                ]
+              }
+              renderLabel={[Function]}
+              searchInput="text"
+              selectOnBlur={true}
+              selectOnNavigation={true}
+              wrapSelection={true}
+            />
+          </div>
+          .
+        </div>,
+      ],
+      "className": "events-header",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Hey ",
+            "Test",
+            ",",
+          ],
+          "className": "events-header-line",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Hey ",
+          "Test",
+          ",",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "here are your events for",
+            <div
+              className="dropdown-wrapper"
+            >
+              <Dropdown
+                additionLabel="Add "
+                additionPosition="top"
+                closeOnBlur={true}
+                deburr={false}
+                defaultValue="this"
+                icon="dropdown"
+                inline={true}
+                minCharacters={1}
+                name="view_context"
+                noResultsMessage="No results found."
+                onChange={[Function]}
+                openOnFocus={true}
+                options={
+                  Array [
+                    Object {
+                      "text": "this",
+                      "value": "this",
+                    },
+                    Object {
+                      "text": "next",
+                      "value": "next",
+                    },
+                  ]
+                }
+                renderLabel={[Function]}
+                searchInput="text"
+                selectOnBlur={true}
+                selectOnNavigation={true}
+                wrapSelection={true}
+              />
+            </div>,
+            <div
+              className="dropdown-wrapper"
+            >
+              <Dropdown
+                additionLabel="Add "
+                additionPosition="top"
+                closeOnBlur={true}
+                deburr={false}
+                defaultValue="week"
+                icon="dropdown"
+                inline={true}
+                minCharacters={1}
+                name="view_time"
+                noResultsMessage="No results found."
+                onChange={[Function]}
+                openOnFocus={true}
+                options={
+                  Array [
+                    Object {
+                      "text": "week",
+                      "value": "week",
+                    },
+                    Object {
+                      "text": "month",
+                      "value": "month",
+                    },
+                  ]
+                }
+                renderLabel={[Function]}
+                searchInput="text"
+                selectOnBlur={true}
+                selectOnNavigation={true}
+                wrapSelection={true}
+              />
+            </div>,
+            ".",
+          ],
+          "className": "events-header-line",
+        },
+        "ref": null,
+        "rendered": Array [
+          "here are your events for",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Dropdown
+                additionLabel="Add "
+                additionPosition="top"
+                closeOnBlur={true}
+                deburr={false}
+                defaultValue="this"
+                icon="dropdown"
+                inline={true}
+                minCharacters={1}
+                name="view_context"
+                noResultsMessage="No results found."
+                onChange={[Function]}
+                openOnFocus={true}
+                options={
+                  Array [
+                    Object {
+                      "text": "this",
+                      "value": "this",
+                    },
+                    Object {
+                      "text": "next",
+                      "value": "next",
+                    },
+                  ]
+                }
+                renderLabel={[Function]}
+                searchInput="text"
+                selectOnBlur={true}
+                selectOnNavigation={true}
+                wrapSelection={true}
+              />,
+              "className": "dropdown-wrapper",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "additionLabel": "Add ",
+                "additionPosition": "top",
+                "closeOnBlur": true,
+                "deburr": false,
+                "defaultValue": "this",
+                "icon": "dropdown",
+                "inline": true,
+                "minCharacters": 1,
+                "name": "view_context",
+                "noResultsMessage": "No results found.",
+                "onChange": [Function],
+                "openOnFocus": true,
+                "options": Array [
+                  Object {
+                    "text": "this",
+                    "value": "this",
+                  },
+                  Object {
+                    "text": "next",
+                    "value": "next",
+                  },
+                ],
+                "renderLabel": [Function],
+                "searchInput": "text",
+                "selectOnBlur": true,
+                "selectOnNavigation": true,
+                "wrapSelection": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Dropdown
+                additionLabel="Add "
+                additionPosition="top"
+                closeOnBlur={true}
+                deburr={false}
+                defaultValue="week"
+                icon="dropdown"
+                inline={true}
+                minCharacters={1}
+                name="view_time"
+                noResultsMessage="No results found."
+                onChange={[Function]}
+                openOnFocus={true}
+                options={
+                  Array [
+                    Object {
+                      "text": "week",
+                      "value": "week",
+                    },
+                    Object {
+                      "text": "month",
+                      "value": "month",
+                    },
+                  ]
+                }
+                renderLabel={[Function]}
+                searchInput="text"
+                selectOnBlur={true}
+                selectOnNavigation={true}
+                wrapSelection={true}
+              />,
+              "className": "dropdown-wrapper",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "additionLabel": "Add ",
+                "additionPosition": "top",
+                "closeOnBlur": true,
+                "deburr": false,
+                "defaultValue": "week",
+                "icon": "dropdown",
+                "inline": true,
+                "minCharacters": 1,
+                "name": "view_time",
+                "noResultsMessage": "No results found.",
+                "onChange": [Function],
+                "openOnFocus": true,
+                "options": Array [
+                  Object {
+                    "text": "week",
+                    "value": "week",
+                  },
+                  Object {
+                    "text": "month",
+                    "value": "month",
+                  },
+                ],
+                "renderLabel": [Function],
+                "searchInput": "text",
+                "selectOnBlur": true,
+                "selectOnNavigation": true,
+                "wrapSelection": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          ".",
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="events-header-line"
+          >
+            Hey 
+            Test
+            ,
+          </div>,
+          <div
+            className="events-header-line"
+          >
+            here are your events for
+            <div
+              className="dropdown-wrapper"
+            >
+              <Dropdown
+                additionLabel="Add "
+                additionPosition="top"
+                closeOnBlur={true}
+                deburr={false}
+                defaultValue="this"
+                icon="dropdown"
+                inline={true}
+                minCharacters={1}
+                name="view_context"
+                noResultsMessage="No results found."
+                onChange={[Function]}
+                openOnFocus={true}
+                options={
+                  Array [
+                    Object {
+                      "text": "this",
+                      "value": "this",
+                    },
+                    Object {
+                      "text": "next",
+                      "value": "next",
+                    },
+                  ]
+                }
+                renderLabel={[Function]}
+                searchInput="text"
+                selectOnBlur={true}
+                selectOnNavigation={true}
+                wrapSelection={true}
+              />
+            </div>
+            <div
+              className="dropdown-wrapper"
+            >
+              <Dropdown
+                additionLabel="Add "
+                additionPosition="top"
+                closeOnBlur={true}
+                deburr={false}
+                defaultValue="week"
+                icon="dropdown"
+                inline={true}
+                minCharacters={1}
+                name="view_time"
+                noResultsMessage="No results found."
+                onChange={[Function]}
+                openOnFocus={true}
+                options={
+                  Array [
+                    Object {
+                      "text": "week",
+                      "value": "week",
+                    },
+                    Object {
+                      "text": "month",
+                      "value": "month",
+                    },
+                  ]
+                }
+                renderLabel={[Function]}
+                searchInput="text"
+                selectOnBlur={true}
+                selectOnNavigation={true}
+                wrapSelection={true}
+              />
+            </div>
+            .
+          </div>,
+        ],
+        "className": "events-header",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Hey ",
+              "Test",
+              ",",
+            ],
+            "className": "events-header-line",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Hey ",
+            "Test",
+            ",",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "here are your events for",
+              <div
+                className="dropdown-wrapper"
+              >
+                <Dropdown
+                  additionLabel="Add "
+                  additionPosition="top"
+                  closeOnBlur={true}
+                  deburr={false}
+                  defaultValue="this"
+                  icon="dropdown"
+                  inline={true}
+                  minCharacters={1}
+                  name="view_context"
+                  noResultsMessage="No results found."
+                  onChange={[Function]}
+                  openOnFocus={true}
+                  options={
+                    Array [
+                      Object {
+                        "text": "this",
+                        "value": "this",
+                      },
+                      Object {
+                        "text": "next",
+                        "value": "next",
+                      },
+                    ]
+                  }
+                  renderLabel={[Function]}
+                  searchInput="text"
+                  selectOnBlur={true}
+                  selectOnNavigation={true}
+                  wrapSelection={true}
+                />
+              </div>,
+              <div
+                className="dropdown-wrapper"
+              >
+                <Dropdown
+                  additionLabel="Add "
+                  additionPosition="top"
+                  closeOnBlur={true}
+                  deburr={false}
+                  defaultValue="week"
+                  icon="dropdown"
+                  inline={true}
+                  minCharacters={1}
+                  name="view_time"
+                  noResultsMessage="No results found."
+                  onChange={[Function]}
+                  openOnFocus={true}
+                  options={
+                    Array [
+                      Object {
+                        "text": "week",
+                        "value": "week",
+                      },
+                      Object {
+                        "text": "month",
+                        "value": "month",
+                      },
+                    ]
+                  }
+                  renderLabel={[Function]}
+                  searchInput="text"
+                  selectOnBlur={true}
+                  selectOnNavigation={true}
+                  wrapSelection={true}
+                />
+              </div>,
+              ".",
+            ],
+            "className": "events-header-line",
+          },
+          "ref": null,
+          "rendered": Array [
+            "here are your events for",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Dropdown
+                  additionLabel="Add "
+                  additionPosition="top"
+                  closeOnBlur={true}
+                  deburr={false}
+                  defaultValue="this"
+                  icon="dropdown"
+                  inline={true}
+                  minCharacters={1}
+                  name="view_context"
+                  noResultsMessage="No results found."
+                  onChange={[Function]}
+                  openOnFocus={true}
+                  options={
+                    Array [
+                      Object {
+                        "text": "this",
+                        "value": "this",
+                      },
+                      Object {
+                        "text": "next",
+                        "value": "next",
+                      },
+                    ]
+                  }
+                  renderLabel={[Function]}
+                  searchInput="text"
+                  selectOnBlur={true}
+                  selectOnNavigation={true}
+                  wrapSelection={true}
+                />,
+                "className": "dropdown-wrapper",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "additionLabel": "Add ",
+                  "additionPosition": "top",
+                  "closeOnBlur": true,
+                  "deburr": false,
+                  "defaultValue": "this",
+                  "icon": "dropdown",
+                  "inline": true,
+                  "minCharacters": 1,
+                  "name": "view_context",
+                  "noResultsMessage": "No results found.",
+                  "onChange": [Function],
+                  "openOnFocus": true,
+                  "options": Array [
+                    Object {
+                      "text": "this",
+                      "value": "this",
+                    },
+                    Object {
+                      "text": "next",
+                      "value": "next",
+                    },
+                  ],
+                  "renderLabel": [Function],
+                  "searchInput": "text",
+                  "selectOnBlur": true,
+                  "selectOnNavigation": true,
+                  "wrapSelection": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Dropdown
+                  additionLabel="Add "
+                  additionPosition="top"
+                  closeOnBlur={true}
+                  deburr={false}
+                  defaultValue="week"
+                  icon="dropdown"
+                  inline={true}
+                  minCharacters={1}
+                  name="view_time"
+                  noResultsMessage="No results found."
+                  onChange={[Function]}
+                  openOnFocus={true}
+                  options={
+                    Array [
+                      Object {
+                        "text": "week",
+                        "value": "week",
+                      },
+                      Object {
+                        "text": "month",
+                        "value": "month",
+                      },
+                    ]
+                  }
+                  renderLabel={[Function]}
+                  searchInput="text"
+                  selectOnBlur={true}
+                  selectOnNavigation={true}
+                  wrapSelection={true}
+                />,
+                "className": "dropdown-wrapper",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "additionLabel": "Add ",
+                  "additionPosition": "top",
+                  "closeOnBlur": true,
+                  "deburr": false,
+                  "defaultValue": "week",
+                  "icon": "dropdown",
+                  "inline": true,
+                  "minCharacters": 1,
+                  "name": "view_time",
+                  "noResultsMessage": "No results found.",
+                  "onChange": [Function],
+                  "openOnFocus": true,
+                  "options": Array [
+                    Object {
+                      "text": "week",
+                      "value": "week",
+                    },
+                    Object {
+                      "text": "month",
+                      "value": "month",
+                    },
+                  ],
+                  "renderLabel": [Function],
+                  "searchInput": "text",
+                  "selectOnBlur": true,
+                  "selectOnNavigation": true,
+                  "wrapSelection": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            ".",
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

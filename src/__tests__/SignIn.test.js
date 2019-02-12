@@ -1,19 +1,13 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import Enzyme from 'enzyme'
+import { shallow } from 'enzyme';
 import MockDate from 'mockdate'
-import firebase from '../firebase'
+
 import EmailPasswordForm from '../components/Forms/EmailPasswordForm'
-import sessionActions from '../actions/sessionActions'
 import SignIn from '../containers/Session/SignIn';
-import * as _ from 'lodash'
-Enzyme.configure({ adapter: new Adapter() });
 
 import configureStore from '../store/configureStore';
-import { signIn } from '../firebase/auth';
-
 const { store } = configureStore()
+
 describe('SignIn', () => {
     MockDate.set('1/1/2018');
     const signInWrapper = shallow(<SignIn store={store} />).dive()

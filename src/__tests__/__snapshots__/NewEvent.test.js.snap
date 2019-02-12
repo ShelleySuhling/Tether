@@ -1,17 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignUp matches snapshot 1`] = `
+exports[`NewEvent matches snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SignUp
-    session={Object {}}
-    sessionActions={
+  Symbol(enzyme.__unrendered__): <NewEvent
+    events={Object {}}
+    eventsActions={
       Object {
-        "clearAuthErrors": [Function],
-        "requestSignIn": [Function],
-        "requestSignOut": [Function],
-        "requestSignUp": [Function],
-        "updateSessionUser": [Function],
+        "requestCreateEvent": [Function],
+        "requestEditEvent": [Function],
+        "requestEvents": [Function],
       }
     }
     store={
@@ -58,11 +56,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <EmailPasswordForm
-        confirmPassword={true}
-        handleChange={[Function]}
+      "children": <EventForm
         onSubmit={[Function]}
-        submitText="Sign Up"
+        submitText="Create Event"
       />,
       "className": "content-container",
     },
@@ -72,12 +68,8 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "confirmPassword": true,
-        "error": undefined,
-        "handleChange": [Function],
-        "isLoading": undefined,
         "onSubmit": [Function],
-        "submitText": "Sign Up",
+        "submitText": "Create Event",
       },
       "ref": null,
       "rendered": null,
@@ -91,11 +83,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <EmailPasswordForm
-          confirmPassword={true}
-          handleChange={[Function]}
+        "children": <EventForm
           onSubmit={[Function]}
-          submitText="Sign Up"
+          submitText="Create Event"
         />,
         "className": "content-container",
       },
@@ -105,12 +95,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "confirmPassword": true,
-          "error": undefined,
-          "handleChange": [Function],
-          "isLoading": undefined,
           "onSubmit": [Function],
-          "submitText": "Sign Up",
+          "submitText": "Create Event",
         },
         "ref": null,
         "rendered": null,

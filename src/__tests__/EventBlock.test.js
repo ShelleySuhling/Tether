@@ -1,12 +1,9 @@
 import * as React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
 import { shallow } from 'enzyme';
-import Enzyme from 'enzyme'
 import moment from 'moment'
+
 import MockDate from 'mockdate'
 import EventBlock from '../components/Events/EventBlock';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 beforeAll(() => {
   MockDate.set('1/1/2018');

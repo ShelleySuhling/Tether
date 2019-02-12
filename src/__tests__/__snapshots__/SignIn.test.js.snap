@@ -20,7 +20,7 @@ ShallowWrapper {
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-        Symbol(Symbol.observable): [Function],
+        Symbol(observable): [Function],
       }
     }
     storeSubscription={
@@ -38,7 +38,7 @@ ShallowWrapper {
           "getState": [Function],
           "replaceReducer": [Function],
           "subscribe": [Function],
-          Symbol(Symbol.observable): [Function],
+          Symbol(observable): [Function],
         },
         "unsubscribe": [Function],
       }

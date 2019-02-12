@@ -20,7 +20,7 @@ class SignOut extends Component {
     render() {
         return (
             < div className="content-container" >
-                {this.state.loading ? "Logging you out" : "You've been successfully logged out"}
+                {this.state.loading ? "Signing you out" : "You've been successfully signed out"}
             </div >
         )
     }
