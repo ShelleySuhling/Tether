@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
+let translateVerticalPlacement = {
+    top: "flex-start",
+    middle: "center",
+    bottom: "flex-end"
+}
 
+let translateHorizontalPlacement = {
+    left: "flex-start",
+    center: "space-around",
+    right: "flex-end"
+}
 
 class ScreenSaverCanvas extends Component {
 
@@ -8,18 +18,22 @@ class ScreenSaverCanvas extends Component {
         super(props)
     }
 
-    render() {
-        let { viewHeight, viewWidth, backgroundColor } = this.props
 
+    render() {
+        let { params } = this.props
         let canvas_styles = {
-            width: viewWidth * .75 + "px",
-            height: viewHeight * .75 + "px",
-            backgroundColor: backgroundColor,
+            width: params.width * .75 + "px",
+            height: params.height * .75 + "px",
+            backgroundColor: params.backgroundColor,
+            display: "flex",
+            alignItems: translateVerticalPlacement[params.verticalPlacement],
+            justifyContent: translateHorizontalPlacement[params.horizontalPlacement],
+            margin: "5px",
         }
 
         return (
-            <div id="screen-saver" style={canvas_styles}>
-                {backgroundColor}
+            <div className="screen-saver-canvas" style={canvas_styles}>
+                {params.backgroundColor}
             </div>
         )
     }

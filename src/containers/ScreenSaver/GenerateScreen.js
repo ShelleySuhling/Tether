@@ -23,7 +23,7 @@ let verticalPlacement = [
     { key: 3, text: "Bottom", value: "bottom" }]
 let horizontalPlacement = [
     { key: 1, text: "Left", value: "left" },
-    { key: 2, text: "Center", value: "Center" },
+    { key: 2, text: "Center", value: "center" },
     { key: 3, text: "Right", value: "right" }]
 
 
@@ -34,6 +34,8 @@ class GenerateScreen extends Component {
         this.windowWidth = window.outerWidth
         this.state = {
             backgroundColor: "blue",
+            width: this.windowWidth,
+            height: this.windowHeight,
         }
     }
 
@@ -55,15 +57,15 @@ class GenerateScreen extends Component {
         this.setState({
             [v.id]: v.value
         })
-        console.log(this.state)
     }
 
     render() {
+        console.log(this.state)
         return (
             <div className="content-container" >
                 <div className="screen-saver-container">
                     <div ref={node => this.node = node}>
-                        <ScreenSaverCanvas viewHeight={window.innerHeight} viewWidth={window.innerWidth} backgroundColor={this.state.backgroundColor} />
+                        <ScreenSaverCanvas params={this.state} />
                     </div>
                     <div className="screen-saver-options">
                         <Menu secondary>
