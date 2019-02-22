@@ -134,10 +134,10 @@
 }
 
 .screen-saver-options{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   padding: 5px;
-  width: auto;
-  height: auto;
-  background: pink;
 }
 
 @keyframes App-logo-spin {

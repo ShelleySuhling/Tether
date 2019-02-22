@@ -8,21 +8,18 @@ class ScreenSaverCanvas extends Component {
         super(props)
     }
 
-    componentWillMount() {
-        let { viewHeight, viewWidth } = this.props
-        this.canvas_styles = {
+    render() {
+        let { viewHeight, viewWidth, backgroundColor } = this.props
+
+        let canvas_styles = {
             width: viewWidth * .75 + "px",
             height: viewHeight * .75 + "px",
-            backgroundColor: "blue",
+            backgroundColor: backgroundColor,
         }
-    }
 
-    render() {
-        let { reference } = this.props
-        console.log(this.props, this.canvas_styles)
         return (
-            <div style={this.canvas_styles}>
-                jfldsjfklds
+            <div id="screen-saver" style={canvas_styles}>
+                {backgroundColor}
             </div>
         )
     }
