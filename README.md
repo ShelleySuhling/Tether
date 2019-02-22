@@ -39,6 +39,6 @@ For logging, go to firebase console -> functions -> logs
 
 redux-form validation: https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124
 
-##Logo Credit
+## Logo Credit
 Logo was made by my friend [Ashley Bernard](https://www.linkedin.com/in/abb64/)
 
