@@ -5,9 +5,11 @@
   "dependencies": {
     "antd": "^3.13.0",
     "bootstrap": "^4.2.1",
+    "dom-to-image": "^2.6.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
+    "file-saver": "^2.0.1",
     "firebase": "^5.8.0",
     "firebase-admin": "^6.5.1",
     "jsdom": "^13.2.0",

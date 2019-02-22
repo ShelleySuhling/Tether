@@ -30,6 +30,7 @@ class NavBar extends Component {
     return (<Dropdown item icon='wrench'>
       <Dropdown.Menu>
         <Menu.Item as={NavLink} exact to='/edit_profile' name='Edit Profile' active={activeItem === 'editprofile'} onClick={this.handleItemClick} />
+        <Menu.Item as={NavLink} exact to='/generate_screen' name='Generate Screen Saver' active={activeItem === 'generatescreen'} onClick={this.handleItemClick} />
         {session.user.role === "master" ? <Menu.Item as={NavLink} exact to='/new_event' name='Create Event' active={activeItem === 'newevent'} onClick={this.handleItemClick} /> : null}
         <Menu.Item as={NavLink} exact to='/signout' name='Sign Out' active={activeItem === 'signout'} onClick={this.handleItemClick} />
       </Dropdown.Menu>

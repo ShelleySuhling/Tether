@@ -17,7 +17,6 @@ import * as _ from 'lodash'
 import Mobile from '../../components/Mobile'
 import Default from '../../components/Default'
 
-
 class Events extends Component {
     constructor(props) {
         super(props)
