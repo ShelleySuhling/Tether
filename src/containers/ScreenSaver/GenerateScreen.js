@@ -9,11 +9,12 @@ import { Button } from 'semantic-ui-react'
 import { saveAs } from 'file-saver';
 import { Dropdown, Menu } from 'semantic-ui-react'
 import ScreenSaverCanvas from '../../components/ScreenSaver/ScreenSaverCanvas'
+import moment from 'moment'
 
 let background = [
-    { key: 1, text: "blue", value: "blue" },
-    { key: 2, text: "red", value: "red" },
-    { key: 3, text: "green", value: "green" }]
+    { key: 1, text: "beach", value: "beach" },
+    { key: 2, text: "coffee", value: "coffee" },
+    { key: 3, text: "cactus", value: "cactus" }]
 let eventFilter = [
     { key: 1, text: "all", value: "all" },
     { key: 2, text: "mandatory", value: "mandatory" }]
@@ -36,6 +37,26 @@ class GenerateScreen extends Component {
             backgroundColor: "blue",
             width: this.windowWidth,
             height: this.windowHeight,
+            events: this.props.events.eventsList,
+            eventFilter: "all",
+        }
+    }
+
+    componentWillMount() {
+        this.props.eventsActions.requestEvents()
+    }
+
+    filterEvents = () => {
+        let { events } = this.state
+
+        if (this.state.eventFilter == "all") {
+            return _.filter(events, (e => {
+                return (moment().isSame(moment(e.startTime), "week") && moment().isBefore(moment(e.startTime)))
+            }))
+        } else if (this.state.eventFilter == "mandatory") {
+            return _.filter(events, (e => {
+                return (moment().isSame(moment(e.startTime), "week") && e.isMandatory)
+            }))
         }
     }
 
@@ -60,12 +81,12 @@ class GenerateScreen extends Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.filterEvents())
         return (
             <div className="content-container" >
                 <div className="screen-saver-container">
                     <div ref={node => this.node = node}>
-                        <ScreenSaverCanvas params={this.state} />
+                        <ScreenSaverCanvas params={this.state} events={this.filterEvents()} />
                     </div>
                     <div className="screen-saver-options">
                         <Menu secondary>

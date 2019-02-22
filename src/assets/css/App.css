@@ -144,6 +144,33 @@
   font-size: 30px;
 }
 
+.screen-saver-event{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: auto;
+  width: auto;
+}
+
+.screen-saver-event .title{
+  min-width: 20vh;
+  text-align: left;
+  color: black;
+  font-size: 3vh;
+}
+
+.screen-saver-event .time{
+  color: white;
+  text-align: right;
+  font-size: 2vh;  
+  padding: 0 0 4px 10px;
+}
+
+.screen-saver-events-wrapper{
+  padding: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
