@@ -150,10 +150,6 @@
   padding: 5px;
 }
 
-.screen-saver-canvas{
-  font-size: 30px;
-}
-
 .screen-saver-event{
   display: flex;
   flex-direction: row;
@@ -179,6 +175,7 @@
 
 .screen-saver-events-wrapper{
   padding: 10px;
+  position: absolute;
 }
 
 @keyframes App-logo-spin {

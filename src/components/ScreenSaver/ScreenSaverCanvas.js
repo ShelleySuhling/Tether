@@ -15,15 +15,19 @@ let translateHorizontalPlacement = {
 }
 
 let translateBackground = {
-    beach: "url(" + require("./beach-high-angle-shot-motion-1547727.jpg") + ")",
-    coffee: "url(" + require("./black-and-white-black-and-white-caffeine-1897417.jpg") + ")",
-    cactus: "url(" + require("./art-blooming-blossom-1855272.jpg") + ")",
+    beach: require("./beach-high-angle-shot-motion-1547727.jpg"),
+    coffee: require("./black-and-white-black-and-white-caffeine-1897417.jpg"),
+    cactus: require("./art-blooming-blossom-1855272.jpg")
 }
 
 class ScreenSaverCanvas extends Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            width: this.props.params.width * .75 + "px",
+            height: this.props.params.height * .75 + "px",
+        }
     }
 
     displayEventDetails() {
@@ -39,14 +43,10 @@ class ScreenSaverCanvas extends Component {
     render() {
         let { params } = this.props
         let canvas_styles = {
-            width: params.width * .75 + "px",
-            height: params.height * .75 + "px",
-            backgroundImage: translateBackground[params.backgroundColor],
-            backgroundSize: params.width * .75 + "px  " + params.height * .75 + "px",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            objectFit: "cover",
+            width: this.state.width,
+            height: this.state.height,
             display: "flex",
+            position: "relative",
             alignItems: translateVerticalPlacement[params.verticalPlacement],
             justifyContent: translateHorizontalPlacement[params.horizontalPlacement],
             margin: "5px",
@@ -55,6 +55,11 @@ class ScreenSaverCanvas extends Component {
 
         return (
             <div className="screen-saver-canvas" style={canvas_styles}>
+                <img src={translateBackground[params.backgroundColor]} style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                }} />
                 <div className="screen-saver-events-wrapper">
                     {this.displayEventDetails()}
                 </div>
