@@ -139,7 +139,7 @@
 .screen-saver-container{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap-reverse;
+  /* flex-wrap: wrap-reverse; */
   justify-content: center;
 }
 
@@ -160,16 +160,16 @@
 }
 
 .screen-saver-event .title{
-  min-width: 20vh;
+  min-width: 10vh;
   text-align: left;
   color: black;
-  font-size: 3vh;
+  font-size: 2vh;
 }
 
 .screen-saver-event .time{
   color: white;
   text-align: right;
-  font-size: 2vh;  
+  font-size: 1vh;  
   padding: 0 0 4px 10px;
 }
 

@@ -16,8 +16,10 @@ let translateHorizontalPlacement = {
 
 let translateBackground = {
     beach: require("./beach-high-angle-shot-motion-1547727.jpg"),
-    coffee: require("./black-and-white-black-and-white-caffeine-1897417.jpg"),
-    cactus: require("./art-blooming-blossom-1855272.jpg")
+    coffee: require("./beverage-blank-break-997719.jpg"),
+    cactus: require("./art-blooming-blossom-1855272.jpg"),
+    abstract: require("./adventure-atmosphere-conifer-418831.jpg"),
+
 }
 
 class ScreenSaverCanvas extends Component {
@@ -25,15 +27,15 @@ class ScreenSaverCanvas extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            width: this.props.params.width * .75 + "px",
-            height: this.props.params.height * .75 + "px",
+            width: this.props.params.width * this.props.params.previewScale + "px",
+            height: this.props.params.height * this.props.params.previewScale + "px",
         }
     }
 
     displayEventDetails() {
-        let { events } = this.props
+        let { events, params } = this.props
         return _.map(events, m => {
-            return <div className="screen-saver-event">
+            return <div key="m.title" className="screen-saver-event">
                 <div className="title">{m.title}</div>
                 <div className="time">{moment(m.startTime).format("ddd h:MM a")}</div>
             </div>
@@ -49,9 +51,7 @@ class ScreenSaverCanvas extends Component {
             position: "relative",
             alignItems: translateVerticalPlacement[params.verticalPlacement],
             justifyContent: translateHorizontalPlacement[params.horizontalPlacement],
-            margin: "5px",
         }
-        console.log(this.displayEventDetails())
 
         return (
             <div className="screen-saver-canvas" style={canvas_styles}>
@@ -63,7 +63,7 @@ class ScreenSaverCanvas extends Component {
                 <div className="screen-saver-events-wrapper">
                     {this.displayEventDetails()}
                 </div>
-            </div>
+            </div >
         )
     }
 

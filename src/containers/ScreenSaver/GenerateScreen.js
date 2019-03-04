@@ -14,7 +14,8 @@ import moment from 'moment'
 let background = [
     { key: 1, text: "beach", value: "beach" },
     { key: 2, text: "coffee", value: "coffee" },
-    { key: 3, text: "cactus", value: "cactus" }]
+    { key: 3, text: "cactus", value: "cactus" },
+    { key: 4, text: "abstract", value: "abstract" }]
 let eventFilter = [
     { key: 1, text: "all", value: "all" },
     { key: 2, text: "mandatory", value: "mandatory" }]
@@ -39,6 +40,7 @@ class GenerateScreen extends Component {
             height: this.windowHeight,
             events: this.props.events.eventsList,
             eventFilter: "all",
+            previewScale: .5,
         }
     }
 
@@ -61,17 +63,20 @@ class GenerateScreen extends Component {
     }
 
     generateScreenSaver = () => {
+        this.forceUpdate()
         let temp_node = this.node.cloneNode(true)
-        temp_node.childNodes[0].style.width = this.windowWidth + "px"
-        temp_node.childNodes[0].style.height = this.windowHeight + "px"
+        temp_node.childNodes[0].style.transformOrigin = 'top left'
+        temp_node.childNodes[0].style.transform = 'scale(1.5) scale(1.5)'
         document.body.appendChild(temp_node);
-        domtoimage.toJpeg(temp_node, { quality: 1 })
+        domtoimage.toJpeg(temp_node, { quality: 100 })
             .then(function (dataUrl) {
                 var link = document.createElement('a');
                 link.download = 'my-image-name.jpeg';
                 link.href = dataUrl;
-                link.click();
-            });
+                return link.click();
+            }).then(() => {
+                document.body.removeChild(temp_node);
+            })
     }
 
     handleOptionChange = (e, v) => {
@@ -81,7 +86,6 @@ class GenerateScreen extends Component {
     }
 
     render() {
-        console.log(this.filterEvents())
         return (
             <div className="content-container" >
                 <div className="screen-saver-container">
