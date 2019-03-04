@@ -7,7 +7,8 @@ import { NavLink, withRouter } from 'react-router-dom'
 import { Menu, Dropdown } from 'semantic-ui-react'
 import * as _ from 'lodash'
 let logo = require('../../assets/images/Tether3.png')
-//This needs to be refactored, shouldn't be calling actions
+
+
 class NavBar extends Component {
 
   constructor(props) {
@@ -42,7 +43,7 @@ class NavBar extends Component {
     return (
       <div className="nav-container">
         <Menu pointing>
-          <div className="logo"><img src={logo} /></div>
+          <div className="logo"><img src={logo} alt="Tether" /></div>
           <Menu.Menu position='right'>
             {!_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/events' name='Events' active={activeItem === 'events'} onClick={this.handleItemClick} /> : null}
             {!_.isEmpty(session.user) ? this.renderDropDown() : null}

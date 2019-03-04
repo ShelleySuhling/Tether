@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import domtoimage from 'dom-to-image';
 import * as _ from 'lodash'
 import { Button } from 'semantic-ui-react'
-import { saveAs } from 'file-saver';
 import { Dropdown, Menu } from 'semantic-ui-react'
 import ScreenSaverCanvas from '../../components/ScreenSaver/ScreenSaverCanvas'
 import moment from 'moment'
@@ -15,7 +14,11 @@ let background = [
     { key: 1, text: "beach", value: "beach" },
     { key: 2, text: "coffee", value: "coffee" },
     { key: 3, text: "cactus", value: "cactus" },
-    { key: 4, text: "abstract", value: "abstract" }]
+    { key: 5, text: "rainbow", value: "rainbow" },
+    { key: 6, text: "blur", value: "blur" },
+    { key: 7, text: "mountain", value: "mountain" },
+    { key: 8, text: "sunset", value: "sunset" }
+]
 let eventFilter = [
     { key: 1, text: "all", value: "all" },
     { key: 2, text: "mandatory", value: "mandatory" }]
@@ -35,7 +38,7 @@ class GenerateScreen extends Component {
         this.windowHeight = window.outerHeight
         this.windowWidth = window.outerWidth
         this.state = {
-            backgroundColor: "blue",
+            backgroundImage: background[0].value,
             width: this.windowWidth,
             height: this.windowHeight,
             events: this.props.events.eventsList,
@@ -51,11 +54,11 @@ class GenerateScreen extends Component {
     filterEvents = () => {
         let { events } = this.state
 
-        if (this.state.eventFilter == "all") {
+        if (this.state.eventFilter === "all") {
             return _.filter(events, (e => {
                 return (moment().isSame(moment(e.startTime), "week") && moment().isBefore(moment(e.startTime)))
             }))
-        } else if (this.state.eventFilter == "mandatory") {
+        } else if (this.state.eventFilter === "mandatory") {
             return _.filter(events, (e => {
                 return (moment().isSame(moment(e.startTime), "week") && e.isMandatory)
             }))
@@ -94,7 +97,7 @@ class GenerateScreen extends Component {
                     </div>
                     <div className="screen-saver-options">
                         <Menu secondary>
-                            <Dropdown id="backgroundColor" placeholder='Background Color' options={background} onChange={this.handleOptionChange} selection />
+                            <Dropdown id="backgroundImage" placeholder='Background Image' options={background} onChange={this.handleOptionChange} selection />
                         </Menu>
                         <Menu secondary>
                             <Dropdown id="eventFilter" placeholder='Event Filter' options={eventFilter} onChange={this.handleOptionChange} selection />

@@ -18,8 +18,11 @@ let translateBackground = {
     beach: require("./beach-high-angle-shot-motion-1547727.jpg"),
     coffee: require("./beverage-blank-break-997719.jpg"),
     cactus: require("./art-blooming-blossom-1855272.jpg"),
-    abstract: require("./adventure-atmosphere-conifer-418831.jpg"),
-
+    trees: require("./adventure-atmosphere-conifer-418831.jpg"),
+    rainbow: require("./abstract-art-artistic-1279813.jpg"),
+    blur: require("./abstract-art-blur-301673.jpg"),
+    mountain: require("./android-wallpaper-cold-daylight-1366919.jpg"),
+    sunset: require("./background-background-image-clouds-1054289.jpg"),
 }
 
 class ScreenSaverCanvas extends Component {
@@ -33,7 +36,7 @@ class ScreenSaverCanvas extends Component {
     }
 
     displayEventDetails() {
-        let { events, params } = this.props
+        let { events } = this.props
         return _.map(events, m => {
             return <div key="m.title" className="screen-saver-event">
                 <div className="title">{m.title}</div>
@@ -55,11 +58,13 @@ class ScreenSaverCanvas extends Component {
 
         return (
             <div className="screen-saver-canvas" style={canvas_styles}>
-                <img src={translateBackground[params.backgroundColor]} style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "cover",
-                }} />
+                <img src={translateBackground[params.backgroundImage]}
+                    alt="background"
+                    style={{
+                        height: "100%",
+                        width: "100%",
+                        objectFit: "cover",
+                    }} />
                 <div className="screen-saver-events-wrapper">
                     {this.displayEventDetails()}
                 </div>
