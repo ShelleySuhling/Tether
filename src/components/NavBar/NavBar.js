@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as sessionActions from '../../actions/sessionActions';
 import PropTypes from 'prop-types';
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink, withRouter, Redirect } from 'react-router-dom'
 import { Menu, Dropdown } from 'semantic-ui-react'
 import * as _ from 'lodash'
 let logo = require('../../assets/images/Tether3.png')
@@ -43,9 +43,12 @@ class NavBar extends Component {
     return (
       <div className="nav-container">
         <Menu pointing>
-          <div className="logo"><img src={logo} alt="Tether" /></div>
+          <NavLink exact to='/events' onClick={this.handleItemClick} >
+            <div className="logo">
+              <img src={logo} alt="Tether" />
+            </div>
+          </NavLink>
           <Menu.Menu position='right'>
-            {!_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/events' name='Events' active={activeItem === 'events'} onClick={this.handleItemClick} /> : null}
             {!_.isEmpty(session.user) ? this.renderDropDown() : null}
             {_.isEmpty(session.user) ? <Menu.Item as={NavLink} exact to='/signup' name='Sign Up' active={activeItem === 'signup'} onClick={this.handleItemClick} /> : null}
           </Menu.Menu>
