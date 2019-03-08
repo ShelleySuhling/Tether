@@ -11,8 +11,6 @@ class EventBlock extends Component {
                 <div className="card-info-container">
                     <div className="card-title">
                         {event.title}
-                        <div className="card-icons">
-                        </div>
                     </div>
                     <div className="card-description">
                         <div><Icon color="blue" name='map marker alternate' /> {event.location}</div>

@@ -15,10 +15,7 @@ import EditProfile from './containers/User/EditProfile'
 import Events from './containers/Events/Events'
 import NewEvent from './containers/Events/NewEvent'
 import EditEvent from './containers/Events/EditEvent'
-
-//https://www.npmjs.com/package/react-responsive
-import Responsive from 'react-responsive';
-
+import GenerateScreen from './containers/ScreenSaver/GenerateScreen'
 
 class App extends Component {
 
@@ -51,6 +48,7 @@ class App extends Component {
             {this.ProtectedRoute({ path: '/events', component: Events })}
             {this.ProtectedRoute({ path: '/signout', component: SignOut })}
             {this.ProtectedRoute({ path: '/edit_profile', component: EditProfile })}
+            {this.ProtectedRoute({ path: '/generate_screen', component: GenerateScreen })}
             {this.AdminRoute({ path: '/new_event', component: NewEvent })}
             {this.AdminRoute({ path: '/edit_event/:id', component: EditEvent })}
           </div>

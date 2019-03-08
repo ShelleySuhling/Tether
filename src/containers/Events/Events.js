@@ -17,7 +17,6 @@ import * as _ from 'lodash'
 import Mobile from '../../components/Mobile'
 import Default from '../../components/Default'
 
-
 class Events extends Component {
     constructor(props) {
         super(props)
@@ -33,11 +32,11 @@ class Events extends Component {
 
     collectEventsByView = () => {
         let { view_context, view_time, events } = this.state
-        if (view_context == "this") {
+        if (view_context === "this") {
             return _.filter(events, (e => {
                 return (moment().isSame(moment(e.startTime), view_time) && moment().isBefore(moment(e.startTime)))
             }))
-        } else if (view_context == "next") {
+        } else if (view_context === "next") {
             return _.filter(events, (e => {
                 return (moment().add(1, view_time).isSame(moment(e.startTime), view_time) && moment().isBefore(moment(e.startTime)))
             }))
