@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as _ from 'lodash'
 import moment from 'moment'
 
-
 class ScreenSaverCanvas extends Component {
 
     constructor(props) {
@@ -13,9 +12,8 @@ class ScreenSaverCanvas extends Component {
         }
     }
 
-
-
     translateBorderRadius = () => {
+        //this should be refactored later
         let { params } = this.props
         if (!params.verticalPlacement) { params.verticalPlacement = "flex-start" }
         if (!params.horizontalPlacement) { params.horizontalPlacement = "flex-start" }

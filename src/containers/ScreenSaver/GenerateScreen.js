@@ -6,30 +6,10 @@ import PropTypes from 'prop-types';
 import domtoimage from 'dom-to-image';
 import * as _ from 'lodash'
 import { Button } from 'semantic-ui-react'
-import { Dropdown, Menu, Icon } from 'semantic-ui-react'
+import { Dropdown, Menu } from 'semantic-ui-react'
 import ScreenSaverCanvas from '../../components/ScreenSaver/ScreenSaverCanvas'
 import moment from 'moment'
-
-let background = [
-    { key: 1, text: "beach", value: require("../../components/ScreenSaver/beach-high-angle-shot-motion-1547727.jpg") },
-    { key: 2, text: "coffee", value: require("../../components/ScreenSaver/beverage-blank-break-997719.jpg") },
-    { key: 3, text: "cactus", value: require("../../components/ScreenSaver/art-blooming-blossom-1855272.jpg") },
-    { key: 5, text: "rainbow", value: require("../../components/ScreenSaver/abstract-art-artistic-1279813.jpg") },
-    { key: 6, text: "blur", value: require("../../components/ScreenSaver/abstract-art-blur-301673.jpg") },
-    { key: 7, text: "mountain", value: require("../../components/ScreenSaver/android-wallpaper-cold-daylight-1366919.jpg") },
-    { key: 8, text: "sunset", value: require("../../components/ScreenSaver/background-background-image-clouds-1054289.jpg") }]
-let eventFilter = [
-    { key: 1, text: "all", value: "all" },
-    { key: 2, text: "mandatory", value: "mandatory" }]
-let verticalPlacement = [
-    { key: 1, text: "Top", value: "flex-start" },
-    { key: 2, text: "Middle", value: "center" },
-    { key: 3, text: "Bottom", value: "flex-end" }]
-let horizontalPlacement = [
-    { key: 1, text: "Left", value: "flex-start" },
-    { key: 2, text: "Center", value: "center" },
-    { key: 3, text: "Right", value: "flex-end" }]
-
+import { background, eventFilter, verticalPlacement, horizontalPlacement } from './ScreenSaverOptions'
 
 class GenerateScreen extends Component {
     constructor(props) {
